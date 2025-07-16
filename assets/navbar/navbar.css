@@ -1,0 +1,141 @@
+:root {
+  --color-blue: #1b9fe0;
+  --bg-blue: #1b9fe0;
+  --color-orange: #f29015;
+  --bg-orange: #f29015;
+  --rounded: 6px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75em 4em !important;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  header .navbar {
+    padding: 1em 2em !important;
+  }
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 3em;
+}
+
+.navbar-menu a {
+  color: #ffff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.navbar-menu a:hover {
+  color: #fff;
+  font-weight: 700 !important;
+}
+
+.navbar-menu a:hover::after {
+  width: 100%;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.navbar-toggle span {
+  width: 24px;
+  height: 3px;
+  background: #ffff;
+  border-radius: 2px;
+  transition: all 0.8s, background 0.3s;
+}
+
+.navbar.fixed .navbar-toggle span {
+  background: var(--color-blue);
+}
+
+@keyframes navbarDrop {
+  from {
+    top: -80px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+.navbar.fixed .navbar-menu a {
+  color: var(--color-blue);
+}
+
+.navbar.fixed .navbar-menu a:hover {
+  color: var(--color-orange);
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+  .navbar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    position: fixed;
+    top: 80px;
+    right: 1.5em;
+    width: 200px;
+    height: auto;
+    background: #fff;
+    padding: 2em 2em;
+    border-radius: 8px;
+    z-index: 9999;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .navbar-menu.active {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .navbar-menu a {
+    color: var(--color-blue) !important;
+  }
+  .navbar-menu a:hover {
+    color: var(--color-orange) !important;
+  }
+}

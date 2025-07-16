@@ -1,0 +1,73 @@
+:root {
+  --color-blue: #1b9fe0;
+  --bg-blue: #1b9fe0;
+  --color-orange: #f29015;
+  --bg-orange: #f29015;
+  --color-gray: #000000;
+  --color-title: #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 3rem 4rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 3em 1em;
+  }
+}
+
+h1 {
+  font-size: 56px !important;
+  font-weight: 600 !important;
+}
+h2 {
+  font-size: 48px !important;
+  font-weight: 600 !important;
+}
+h3 {
+  font-size: 40px !important;
+  font-weight: 600 !important;
+}
+h4 {
+  font-size: 32px !important;
+  font-weight: 600 !important;
+}
+h5 {
+  font-size: 28px !important;
+  font-weight: 600 !important;
+}
+h6 {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+}
+p {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+a {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+span {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
