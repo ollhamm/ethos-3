@@ -89,3 +89,72 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+// Ekosistem interaktif
+// ... existing code ...
+
+// Ekosistem Ethos Slider Manual (tanpa Swiper.js)
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.ekosistem-swiper');
+    const prevBtn = document.querySelector('.ekosistem-btn-prev');
+    const nextBtn = document.querySelector('.ekosistem-btn-next');
+    let currentCenter = 0;
+
+    function getCards() {
+        return Array.from(container.querySelectorAll('.ekosistem-card'));
+    }
+
+    function updateSlider() {
+        const cards = getCards();
+        if (cards.length === 0) return;
+        if (currentCenter < 0 || currentCenter >= cards.length) {
+            currentCenter = Math.floor(cards.length / 2);
+        }
+        const total = cards.length;
+        const maxShow = 2; // 2 kiri, 2 kanan
+        cards.forEach((card, idx) => {
+            card.classList.remove('active', 'left', 'right', 'left2', 'right2', 'out');
+            // Hitung offset relatif ke currentCenter (looping)
+            let offset = idx - currentCenter;
+            if (offset > total / 2) offset -= total;
+            if (offset < -total / 2) offset += total;
+            card.setAttribute('data-offset', offset);
+            if (offset === 0) {
+                card.classList.add('active');
+            } else if (offset === -1) {
+                card.classList.add('left');
+            } else if (offset === -2) {
+                card.classList.add('left2');
+            } else if (offset === 1) {
+                card.classList.add('right');
+            } else if (offset === 2) {
+                card.classList.add('right2');
+            } else {
+                card.classList.add('out');
+            }
+        });
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+    }
+
+    function nextSlide() {
+        const cards = getCards();
+        currentCenter = (currentCenter + 1) % cards.length;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        const cards = getCards();
+        currentCenter = (currentCenter - 1 + cards.length) % cards.length;
+        updateSlider();
+    }
+
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        const cards = getCards();
+        currentCenter = Math.floor(cards.length / 2);
+        updateSlider();
+    }
+});
