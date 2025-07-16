@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.querySelector('.navbar-toggle');
     const menu = document.querySelector('.navbar-menu');
+    const navbar = document.querySelector('.navbar');
+
+
 
     if (toggle && menu) {
         toggle.addEventListener('click', function (e) {
@@ -19,5 +22,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     } else {
         console.error('Navbar elements not found!');
+    }
+
+    // Navbar fixed on scroll
+    if (navbar) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 20) {
+                if (!navbar.classList.contains('fixed')) {
+                    navbar.classList.add('fixed');
+                }
+            } else {
+                navbar.classList.remove('fixed');
+            }
+        });
     }
 });

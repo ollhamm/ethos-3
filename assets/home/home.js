@@ -65,3 +65,27 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+// Keunggulan Ethos interaktif
+// Versi: deskripsi di HTML, muncul tepat di bawah list yang diklik
+
+document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.keunggulan-item');
+    const descs = document.querySelectorAll('.keunggulan-desc-item');
+
+    // Sembunyikan semua deskripsi di awal
+    descs.forEach(d => d.style.display = 'none');
+
+    items.forEach((item, idx) => {
+        item.addEventListener('click', function () {
+            // Hilangkan highlight dari semua item
+            items.forEach(i => i.classList.remove('active'));
+            // Sembunyikan semua deskripsi
+            descs.forEach(d => d.style.display = 'none');
+            // Tampilkan deskripsi setelah item yang diklik
+            descs[idx].style.display = 'block';
+            // Highlight item aktif
+            this.classList.add('active');
+        });
+    });
+});
