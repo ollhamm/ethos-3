@@ -3,7 +3,6 @@
   --bg-blue: #1b9fe0;
   --color-orange: #f29015;
   --bg-orange: #f29015;
-  --rounded: 6px;
 }
 
 header {
@@ -52,8 +51,7 @@ header .navbar {
 }
 
 .navbar-menu a:hover {
-  color: #fff;
-  font-weight: 700 !important;
+  color: var(--color-orange);
 }
 
 .navbar-menu a:hover::after {

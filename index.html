@@ -42,9 +42,9 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <!-- body start -->
+  <!-- Body Start -->
   <body>
-    <!-- header start -->
+    <!-- Header Start -->
     <header>
       <nav class="navbar">
         <a href="#" class="navbar-logo">
@@ -65,10 +65,10 @@
         </div>
       </nav>
     </header>
-    <!-- header end -->
-    <!-- home hero start -->
+    <!-- Header End -->
+    <!-- Home Hero Start -->
     <section>
-      <div class="home-banner-section position-relative section">
+      <div class="home-banner-section section">
         <div class="home-banner-slide active">
           <img
             src="images/bussines-1.png"
@@ -159,7 +159,9 @@
             </div>
           </div>
         </div>
-        <div class="home-banner-nav d-flex gap-3 mb-4">
+        <div
+          class="home-banner-nav d-flex align-items-start justify-content-start gap-3 mb-4"
+        >
           <button
             class="home-banner-btn home-banner-btn-prev"
             aria-label="Sebelumnya"
@@ -175,9 +177,82 @@
         </div>
       </div>
     </section>
-    <!-- home hero end -->
-    <!-- home about start -->
-    <section></section>
+    <!-- Home Hero End -->
+    <!-- Home About Start -->
+    <section class="about-section section">
+      <div class="about-container section">
+        <div class="about-text">
+          <h1 class="about-title">
+            Tentang
+            <span class="about-title-highlight">Ethos</span>
+          </h1>
+          <p class="about-desc">
+            PT Ethos Kreatif Indonesia (Ethos) merupakan perusahaan FMCG (Fast
+            Moving Consumer Goods) berbasis herbal yang membangun ekosistem dari
+            hulu ke hilir, mulai dari pengembangan produk-produk herbal
+            inovatif, pemasaran digital hingga pemberdayaan komunitas.
+          </p>
+          <p class="about-desc">
+            Kami percaya bahwa masa depan kesehatan dan industri lokal dimulai
+            dari akar nusantara. Dengan semangat kolaborasi dan teknologi
+            digital, kami terus tumbuh sebagai katalis perubahan, menjangkau
+            lebih dari 500.000 konsumen dan mitra distribusi di seluruh
+            Indonesia.
+          </p>
+        </div>
+        <div class="about-image-wrapper">
+          <video class="about-video" width="100%" preload="metadata">
+            <source src="videos/ethos.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <span class="about-play"><i class="fa fa-play"></i></span>
+        </div>
+      </div>
+    </section>
+    <!-- Home About End -->
+    <!-- Keunggulan Ethos Start -->
+    <section class="keunggulan-section">
+      <div class="keunggulan-inner">
+        <img
+          src="images/bussines.png"
+          alt="Keunggulan Ethos"
+          class="keunggulan-bg-img"
+        />
+        <div class="keunggulan-bg-layer"></div>
+        <div class="keunggulan-content">
+          <div class="keunggulan-left">
+            <h1 class="keunggulan-title">5 Keunggulan<br />Utama Ethos</h1>
+            <ul class="keunggulan-list">
+              <li class="keunggulan-item active">
+                <span class="keunggulan-number">01</span>
+                <span class="keunggulan-text">Produk Herbal Inovatif</span>
+              </li>
+              <p>
+                Pengembangan produk herbal dengan menyatukan riset modern dan
+                kearifan lokal untuk gaya hidup sehat masa kini.
+              </p>
+              <li class="keunggulan-item">
+                <span class="keunggulan-number">02</span>
+                <span class="keunggulan-text">Omnichannel Distribution</span>
+              </li>
+              <li class="keunggulan-item">
+                <span class="keunggulan-number">03</span>
+                <span class="keunggulan-text">Komitmen Berkelanjutan</span>
+              </li>
+              <li class="keunggulan-item">
+                <span class="keunggulan-number">04</span>
+                <span class="keunggulan-text">Budaya Kolaboratif</span>
+              </li>
+              <li class="keunggulan-item">
+                <span class="keunggulan-number">05</span>
+                <span class="keunggulan-text">Pertumbuhan Eksponensial</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Keunggulan Ethos End -->
     <script src="assets/navbar/navbar.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script
@@ -204,4 +279,5 @@
       });
     </script>
   </body>
+  <!-- Body End -->
 </html>

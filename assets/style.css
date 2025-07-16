@@ -1,5 +1,6 @@
 :root {
   --color-blue: #1b9fe0;
+  --volor-white: #ffffff;
   --bg-blue: #1b9fe0;
   --color-orange: #f29015;
   --bg-orange: #f29015;
@@ -10,9 +11,7 @@
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Poppins", Arial, sans-serif;
-  width: 100%;
   position: relative;
   overflow-x: hidden;
 }
@@ -70,4 +69,81 @@ a {
 span {
   font-size: 16px !important;
   font-weight: 500 !important;
+}
+
+/* RESPONSIVE FONT SIZE GLOBAL */
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 48px !important;
+  }
+  h2 {
+    font-size: 32px !important;
+  }
+  h3 {
+    font-size: 28px !important;
+  }
+  h4 {
+    font-size: 24px !important;
+  }
+  h5 {
+    font-size: 20px !important;
+  }
+  h6 {
+    font-size: 18px !important;
+  }
+  p,
+  a,
+  span {
+    font-size: 15px !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 48px !important;
+  }
+  h2 {
+    font-size: 24px !important;
+  }
+  h3 {
+    font-size: 20px !important;
+  }
+  h4 {
+    font-size: 18px !important;
+  }
+  h5 {
+    font-size: 16px !important;
+  }
+  h6 {
+    font-size: 14px !important;
+  }
+  p,
+  a,
+  span {
+    font-size: 13px !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 20px !important;
+  }
+  h2 {
+    font-size: 18px !important;
+  }
+  h3 {
+    font-size: 16px !important;
+  }
+  h4 {
+    font-size: 14px !important;
+  }
+  h5 {
+    font-size: 13px !important;
+  }
+  h6 {
+    font-size: 12px !important;
+  }
+  p,
+  a,
+  span {
+    font-size: 12px !important;
+  }
 }

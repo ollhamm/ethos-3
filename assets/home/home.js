@@ -1,13 +1,7 @@
 // Home Banner Swiper Interactivity
 
 document.addEventListener('DOMContentLoaded', function () {
-    const progressBars = document.querySelectorAll('.home-banner-progress-bar');
 
-    function updateProgress(activeIdx) {
-        progressBars.forEach((bar, idx) => {
-            bar.classList.toggle('home-banner-progress-bar-active', idx === activeIdx);
-        });
-    }
 
     // Swiper initialization
     const swiper = new Swiper('.home-banner-swiper', {
@@ -27,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Set initial progress
-    updateProgress(swiper.realIndex);
 
     const slides = document.querySelectorAll('.home-banner-slide');
     const prevBtn = document.querySelector('.home-banner-btn-prev');
@@ -54,5 +47,21 @@ document.addEventListener('DOMContentLoaded', function () {
         nextBtn.addEventListener('click', nextSlide);
         prevBtn.addEventListener('click', prevSlide);
         showSlide(current);
+    }
+
+    const playBtn = document.querySelector('.about-play');
+    const video = document.querySelector('.about-video');
+    if (playBtn && video) {
+        playBtn.addEventListener('click', function () {
+            video.play();
+            playBtn.style.display = 'none';
+            video.setAttribute('controls', 'controls');
+        });
+        video.addEventListener('pause', function () {
+            if (video.currentTime !== 0 && !video.ended) {
+                playBtn.style.display = '';
+                video.removeAttribute('controls');
+            }
+        });
     }
 });
