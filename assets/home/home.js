@@ -49,21 +49,17 @@ document.addEventListener('DOMContentLoaded', function () {
         showSlide(current);
     }
 
-    const playBtn = document.querySelector('.about-play');
-    const video = document.querySelector('.about-video');
-    if (playBtn && video) {
-        playBtn.addEventListener('click', function () {
-            video.play();
-            playBtn.style.display = 'none';
-            video.setAttribute('controls', 'controls');
-        });
-        video.addEventListener('pause', function () {
-            if (video.currentTime !== 0 && !video.ended) {
-                playBtn.style.display = '';
-                video.removeAttribute('controls');
-            }
-        });
+    // Play video from thumbnail click (About Section)
+    const aboutThumbnail = document.getElementById('aboutThumbnail');
+    const aboutPlayBtn = document.getElementById('aboutPlayBtn');
+    const aboutVideo = document.querySelector('.about-video');
+    function playAboutVideo() {
+        if (aboutThumbnail) aboutThumbnail.style.display = 'none';
+        if (aboutPlayBtn) aboutPlayBtn.style.display = 'none';
+        if (aboutVideo) aboutVideo.play();
     }
+    if (aboutThumbnail) aboutThumbnail.addEventListener('click', playAboutVideo);
+    if (aboutPlayBtn) aboutPlayBtn.addEventListener('click', playAboutVideo);
 });
 
 // Keunggulan Ethos interaktif
@@ -100,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const prevBtn = document.querySelector('.ekosistem-btn-prev');
     const nextBtn = document.querySelector('.ekosistem-btn-next');
     let currentCenter = 0;
+    let autoSlideInterval;
 
     function getCards() {
         return Array.from(container.querySelectorAll('.ekosistem-card'));
@@ -142,12 +139,25 @@ document.addEventListener('DOMContentLoaded', function () {
         const cards = getCards();
         currentCenter = (currentCenter + 1) % cards.length;
         updateSlider();
+        resetAutoSlide();
     }
 
     function prevSlide() {
         const cards = getCards();
         currentCenter = (currentCenter - 1 + cards.length) % cards.length;
         updateSlider();
+        resetAutoSlide();
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            nextSlide();
+        }, 3000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
     }
 
     if (nextBtn && prevBtn) {
@@ -156,5 +166,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const cards = getCards();
         currentCenter = Math.floor(cards.length / 2);
         updateSlider();
+        startAutoSlide();
     }
 });

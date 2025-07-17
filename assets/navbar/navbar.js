@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.querySelector('.navbar-toggle');
     const menu = document.querySelector('.navbar-menu');
     const navbar = document.querySelector('.navbar');
-
-
+    const logoImg = document.querySelector('.navbar-logo img');
 
     if (toggle && menu) {
         toggle.addEventListener('click', function (e) {
@@ -31,8 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!navbar.classList.contains('fixed')) {
                     navbar.classList.add('fixed');
                 }
+                if (logoImg) logoImg.src = 'images/logo-blue.png';
             } else {
                 navbar.classList.remove('fixed');
+                if (logoImg) logoImg.src = 'images/logo-white.png';
             }
         });
     }

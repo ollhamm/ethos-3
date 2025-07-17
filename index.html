@@ -21,6 +21,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css?family=Archivo:400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -48,7 +52,7 @@
     <header>
       <nav class="navbar">
         <a href="#" class="navbar-logo">
-          <img src="images/logo-blue.png" alt="PT Ethos Logo" />
+          <img src="images/logo-white.png" alt="PT Ethos Logo" />
         </a>
         <div class="navbar-toggle" aria-label="Toggle navigation" tabindex="0">
           <span></span>
@@ -70,10 +74,21 @@
     <section>
       <div class="home-banner-section section">
         <img
-          src="images/doodle.svg"
+          src="./assets/home/components-hero/hero-atas-title.svg"
           alt="Doodle"
-          class="home-banner-doodle-img"
+          class="hero-atas-title"
         />
+        <img
+          src="./assets/home/components-hero/hero-bawah-navbar.svg"
+          alt="Doodle"
+          class="hero-bawah-navbar"
+        />
+        <img
+          src="./assets/home/components-hero/hero-bottom.svg"
+          alt="Doodle"
+          class="hero-bottom"
+        />
+
         <div class="home-banner-slide active">
           <img
             src="images/bussines-1.png"
@@ -85,7 +100,7 @@
               class="row align-items-center h-100 flex-lg-row flex-column-reverse"
             >
               <div
-                class="col-lg-6 col-12 d-flex flex-column justify-content-center home-banner-content"
+                class="d-flex flex-column justify-content-center home-banner-content"
               >
                 <h1 class="home-banner-title mb-3">
                   Membangun Ekosistem Herbal Terintegrasi dari Hulu ke Hilir
@@ -170,7 +185,33 @@
     <!-- Home Hero End -->
     <!-- Home About Start -->
     <section class="about-section section">
-      <div class="about-container section">
+      <img
+        src="./assets/home/components-about/about-atas.svg"
+        alt="Doodle"
+        class="about-atas"
+      />
+      <img
+        src="./assets/home/components-about/about-kanan.svg"
+        alt="Doodle"
+        class="about-kanan"
+      />
+
+      <div class="about-container">
+        <div class="about-image-wrapper">
+          <video class="about-video" preload="metadata">
+            <source src="videos/ethos.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <img
+            src="images/herbal.png"
+            alt="Thumbnail Video Ethos"
+            class="about-thumbnail"
+            id="aboutThumbnail"
+          />
+          <span class="about-play" id="aboutPlayBtn"
+            ><i class="fa fa-play"></i
+          ></span>
+        </div>
         <div class="about-text">
           <h1 class="about-title">
             Tentang
@@ -189,13 +230,6 @@
             lebih dari 500.000 konsumen dan mitra distribusi di seluruh
             Indonesia.
           </p>
-        </div>
-        <div class="about-image-wrapper">
-          <video class="about-video" width="100%" preload="metadata">
-            <source src="videos/ethos.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <span class="about-play"><i class="fa fa-play"></i></span>
         </div>
       </div>
     </section>
@@ -260,9 +294,20 @@
     </section>
     <!-- Ekosistem Start -->
     <section class="ekosistem-section">
+      <img
+        src="./assets/home/components-ekosistem/ekosistem-kiri-atas.svg"
+        alt="Doodle"
+        class="ekosistem-kiri-atas"
+      />
+      <img
+        src="./assets/home/components-ekosistem/ekosistem-kanan-atas.svg"
+        alt="Doodle"
+        class="ekosistem-atas"
+      />
       <div class="ekosistem-inner">
-        <h1 class="ekosistem-title text-center">
-          Ekosistem Ethos:<br />Dari Akar Hingga Aksi
+        <h1 class="ekosistem-title">
+          Ekosistem
+          <span class="ekosistem-title-highlight">Ethos</span>
         </h1>
         <p class="ekosistem-desc text-center">
           Di balik setiap produk Ethos, ada rantai nilai yang hidup: petani
