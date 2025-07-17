@@ -398,6 +398,12 @@
   height: 100%;
   z-index: 3;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
 }
 
 .keunggulan-bg-layer {
@@ -421,6 +427,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 2;
+  display: none;
 }
 .keunggulan-content {
   position: relative;
@@ -470,26 +477,43 @@
   align-items: center;
   background: transparent;
   margin-bottom: 2rem;
-  border: 2px solid #fff;
+  border: 1.5px solid #fff;
   border-radius: var(--radius);
   transition: background 0.2s, border 0.2s;
   cursor: pointer;
-}
-.keunggulan-item:last-child {
-  margin-bottom: 0;
+  gap: 2rem;
 }
 .keunggulan-number {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 80px;
-  height: 50px;
+  height: 60px;
   border-radius: var(--radius);
   background: var(--color-orange, #f29015);
   color: #fff;
   margin-right: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1;
+  box-sizing: border-box;
 }
-
+.keunggulan-text {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.keunggulan-item h6.keunggulan-number,
+.keunggulan-item h6.keunggulan-text {
+  margin: 0;
+  padding: 0;
+}
+.keunggulan-item:last-child {
+  margin-bottom: 0;
+}
 .keunggulan-item.active {
   background: #fff;
 }

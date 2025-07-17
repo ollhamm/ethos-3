@@ -68,20 +68,24 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const items = document.querySelectorAll('.keunggulan-item');
     const descs = document.querySelectorAll('.keunggulan-desc-item');
+    const inner = document.querySelector('.keunggulan-inner');
 
-    // Sembunyikan semua deskripsi di awal
-    descs.forEach(d => d.style.display = 'none');
+    // Fungsi untuk set aktif berdasarkan index
+    function setActive(idx) {
+        items.forEach((item, i) => item.classList.toggle('active', i === idx));
+        descs.forEach((desc, i) => desc.style.display = i === idx ? 'block' : 'none');
+        const img = items[idx].querySelector('.keunggulan-bg-img');
+        if (img) inner.style.backgroundImage = `url('${img.src}')`;
+    }
+
+    // Set default aktif ke index 0
+    if (items.length > 0) {
+        setActive(0);
+    }
 
     items.forEach((item, idx) => {
         item.addEventListener('click', function () {
-            // Hilangkan highlight dari semua item
-            items.forEach(i => i.classList.remove('active'));
-            // Sembunyikan semua deskripsi
-            descs.forEach(d => d.style.display = 'none');
-            // Tampilkan deskripsi setelah item yang diklik
-            descs[idx].style.display = 'block';
-            // Highlight item aktif
-            this.classList.add('active');
+            setActive(idx);
         });
     });
 });
