@@ -181,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const upBtns = document.querySelectorAll('.partnership-btn-up');
     const downBtns = document.querySelectorAll('.partnership-btn-down');
     let current = 0; // default aktif index 0
+    let autoSlideInterval;
 
     function showSlide(idx) {
         slides.forEach((slide, i) => {
@@ -198,16 +199,31 @@ document.addEventListener('DOMContentLoaded', function () {
     function nextSlide() {
         current = (current + 1) % slides.length;
         showSlide(current);
+        resetAutoSlide();
     }
 
     function prevSlide() {
         current = (current - 1 + slides.length) % slides.length;
         showSlide(current);
+        resetAutoSlide();
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }, 3000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
     }
 
     if (slides.length > 0) {
         downBtns.forEach(btn => btn.addEventListener('click', nextSlide));
         upBtns.forEach(btn => btn.addEventListener('click', prevSlide));
         showSlide(current);
+        startAutoSlide();
     }
 });
