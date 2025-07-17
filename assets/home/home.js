@@ -173,3 +173,41 @@ document.addEventListener('DOMContentLoaded', function () {
         startAutoSlide();
     }
 });
+
+// Partnership Vertikal Carousel (HTML hardcode, update .active & background)
+document.addEventListener('DOMContentLoaded', function () {
+    const section = document.querySelector('.partnership-section');
+    const slides = Array.from(document.querySelectorAll('.partnership-slide'));
+    const upBtns = document.querySelectorAll('.partnership-btn-up');
+    const downBtns = document.querySelectorAll('.partnership-btn-down');
+    let current = 0; // default aktif index 0
+
+    function showSlide(idx) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === idx);
+        });
+        // Ambil src dari .partnership-bg-img di slide aktif
+        const bgImg = slides[idx].querySelector('.partnership-bg-img');
+        if (bgImg && bgImg.src) {
+            section.style.backgroundImage = `url('${bgImg.src}')`;
+        } else {
+            section.style.backgroundImage = '';
+        }
+    }
+
+    function nextSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }
+
+    function prevSlide() {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+    }
+
+    if (slides.length > 0) {
+        downBtns.forEach(btn => btn.addEventListener('click', nextSlide));
+        upBtns.forEach(btn => btn.addEventListener('click', prevSlide));
+        showSlide(current);
+    }
+});
