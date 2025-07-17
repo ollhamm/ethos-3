@@ -896,6 +896,12 @@
   background-position: center;
   background-repeat: no-repeat;
   transition: background-image 0.5s;
+  margin-bottom: 6rem;
+}
+@media (max-width: 600px) {
+  .partnership-section {
+    margin-bottom: 2rem;
+  }
 }
 .partnership-kiri-bawah {
   position: absolute;
