@@ -656,7 +656,7 @@
 .ekosistem-btn-prev,
 .ekosistem-btn-next {
   position: absolute;
-  top: 26%;
+  top: 40%;
   transform: translateY(-50%);
   z-index: 10;
   background: var(--bg-blue);
