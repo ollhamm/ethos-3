@@ -185,7 +185,6 @@
 /* ===== */
 .about-section {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   background: #fff;
@@ -602,6 +601,7 @@
 @media screen and (max-width: 768px) {
   .ekosistem-bawah {
     width: 100%;
+    bottom: -2rem;
   }
 }
 
@@ -870,9 +870,103 @@
 
 .ekosistem-overlay-content {
   width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
+.ekosistem-detail-row {
+  display: flex;
+  align-items: end;
+  border-bottom-left-radius: 6rem;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1.2rem;
+  background-color: rgba(71, 71, 71, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.ekosistem-detail-row span {
+  color: #fff;
+}
+
+.ekosistem-detail-label {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.3s;
+}
+.ekosistem-btn-detail {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--volor-white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.ekosistem-btn-detail i {
+  transition: transform 0.25s cubic-bezier(0.4, 1, 0.6, 1), color 0.2s;
+}
+.ekosistem-btn-detail:hover i {
+  transform: rotate(-45deg);
+}
+
+.ekosistem-card.active .ekosistem-card-img {
+  transform: scale(1.08);
+  transition: transform 0.4s cubic-bezier(0.4, 1.2, 0.6, 1);
+}
+.ekosistem-card.active:hover .ekosistem-card-img {
+  transform: scale(1);
+}
+.ekosistem-overlay-content {
+  margin-bottom: 0;
+  transition: margin-bottom 0.3s;
+}
+.ekosistem-card.active:hover .ekosistem-overlay-content {
+  margin-bottom: 4rem;
+}
+.ekosistem-detail-row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.7rem 1.2rem 0.7rem 1.5rem;
+  margin: 0;
+  background: rgba(71, 71, 71, 0.3);
+  border-bottom-left-radius: 2.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 4;
+}
+.ekosistem-card.active:hover .ekosistem-detail-row {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (max-width: 600px) {
+  .ekosistem-detail-row {
+    padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+  }
+  .ekosistem-btn-detail {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .ekosistem-detail-label {
+    font-size: 0.95rem;
+  }
+}
 /* ===== */
 /* Ekosistem End */
 /* ===== */
@@ -883,7 +977,7 @@
 .partnership-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1102,6 +1196,11 @@
   align-self: center;
 }
 @media (max-width: 1024px) {
+  .partnership-section {
+    min-height: unset !important;
+    height: auto !important;
+    margin-bottom: 6rem;
+  }
   .partnership-inner {
     flex-direction: column;
     align-items: stretch;
@@ -1138,9 +1237,9 @@
 }
 @media (max-width: 600px) {
   .partnership-section {
-    min-height: 80vh;
-    padding: 2rem 0 3rem 0;
-    margin-bottom: 8rem;
+    min-height: unset !important;
+    height: auto !important;
+    margin-bottom: 6rem;
   }
   .partnership-inner {
     padding: 0 0.5rem;

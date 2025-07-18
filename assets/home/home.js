@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextBtn = document.querySelector('.ekosistem-btn-next');
     let currentCenter = 0;
     let autoSlideInterval;
+    let isPaused = false;
 
     function getCards() {
         return Array.from(container.querySelectorAll('.ekosistem-card'));
@@ -137,30 +138,52 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         prevBtn.style.display = 'flex';
         nextBtn.style.display = 'flex';
+
+        // Pause/resume auto-slide on hover active card
+        cards.forEach((card, idx) => {
+            card.removeEventListener('mouseenter', pauseAutoSlide);
+            card.removeEventListener('mouseleave', resumeAutoSlide);
+            if (card.classList.contains('active')) {
+                card.addEventListener('mouseenter', pauseAutoSlide);
+                card.addEventListener('mouseleave', resumeAutoSlide);
+            }
+        });
     }
 
     function nextSlide() {
         const cards = getCards();
         currentCenter = (currentCenter + 1) % cards.length;
         updateSlider();
-        resetAutoSlide();
+        if (!isPaused) resetAutoSlide();
     }
 
     function prevSlide() {
         const cards = getCards();
         currentCenter = (currentCenter - 1 + cards.length) % cards.length;
         updateSlider();
-        resetAutoSlide();
+        if (!isPaused) resetAutoSlide();
     }
 
     function startAutoSlide() {
+        clearInterval(autoSlideInterval);
         autoSlideInterval = setInterval(() => {
-            nextSlide();
+            if (!isPaused) nextSlide();
         }, 3000);
     }
 
     function resetAutoSlide() {
+        if (!isPaused) {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+    }
+
+    function pauseAutoSlide() {
+        isPaused = true;
         clearInterval(autoSlideInterval);
+    }
+    function resumeAutoSlide() {
+        isPaused = false;
         startAutoSlide();
     }
 
@@ -184,8 +207,26 @@ document.addEventListener('DOMContentLoaded', function () {
     let autoSlideInterval;
 
     function showSlide(idx) {
+        const total = slides.length;
         slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === idx);
+            slide.classList.remove('active', 'up', 'down', 'up2', 'down2', 'out');
+            let offset = i - idx;
+            if (offset > total / 2) offset -= total;
+            if (offset < -total / 2) offset += total;
+            slide.setAttribute('data-offset', offset);
+            if (offset === 0) {
+                slide.classList.add('active');
+            } else if (offset === -1) {
+                slide.classList.add('up');
+            } else if (offset === -2) {
+                slide.classList.add('up2');
+            } else if (offset === 1) {
+                slide.classList.add('down');
+            } else if (offset === 2) {
+                slide.classList.add('down2');
+            } else {
+                slide.classList.add('out');
+            }
         });
         // Ambil src dari .partnership-bg-img di slide aktif
         const bgImg = slides[idx].querySelector('.partnership-bg-img');
