@@ -252,8 +252,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  max-width: 500px;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
@@ -284,8 +282,6 @@
 }
 
 .about-video {
-  max-width: 500px;
-  height: auto;
   border-radius: var(--radius);
   z-index: 2;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
