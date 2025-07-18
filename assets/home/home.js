@@ -268,3 +268,59 @@ document.addEventListener('DOMContentLoaded', function () {
         startAutoSlide();
     }
 });
+
+// News Section Carousel Scroll Logic
+(function () {
+    const newsList = document.querySelector('.news-list');
+    const prevBtn = document.querySelector('.news-slider-btn-prev');
+    const nextBtn = document.querySelector('.news-slider-btn-next');
+    const dots = Array.from(document.querySelectorAll('.news-slider-dot'));
+    const cardWidth = 320 + 32; // card width + gap
+    const cardsPerPage = 3;
+    if (!newsList) return;
+    const totalCards = newsList.querySelectorAll('.news-card-container').length;
+    const totalPages = Math.ceil(totalCards / cardsPerPage);
+
+    function updateActiveDotAndButtons() {
+        // Dot logic
+        if (dots.length) {
+            const scrollLeft = newsList.scrollLeft;
+            const page = Math.round(scrollLeft / (cardWidth * cardsPerPage));
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === page);
+            });
+        }
+        // Button disable logic
+        if (prevBtn) prevBtn.disabled = newsList.scrollLeft <= 0;
+        if (nextBtn) {
+            const maxScroll = newsList.scrollWidth - newsList.clientWidth - 2; // -2 for rounding
+            nextBtn.disabled = newsList.scrollLeft >= maxScroll;
+        }
+    }
+
+    newsList.addEventListener('scroll', updateActiveDotAndButtons);
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+            newsList.scrollBy({ left: -cardWidth * cardsPerPage, behavior: 'smooth' });
+            setTimeout(updateActiveDotAndButtons, 400);
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+            newsList.scrollBy({ left: cardWidth * cardsPerPage, behavior: 'smooth' });
+            setTimeout(updateActiveDotAndButtons, 400);
+        });
+    }
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', function () {
+            newsList.scrollTo({
+                left: i * cardWidth * cardsPerPage,
+                behavior: 'smooth'
+            });
+            setTimeout(updateActiveDotAndButtons, 400);
+        });
+    });
+
+    updateActiveDotAndButtons();
+})();
