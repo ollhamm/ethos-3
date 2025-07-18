@@ -246,15 +246,24 @@
 
 .about-image-wrapper {
   position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+}
+.about-video {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  display: block;
 }
 .about-thumbnail {
-  z-index: 2;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  cursor: pointer;
+  z-index: 2;
   border-radius: var(--radius);
 }
 .about-play {
@@ -334,7 +343,6 @@
   .about-thumbnail {
     width: 100% !important;
     height: auto !important;
-    min-height: 180px;
     border-radius: var(--radius);
   }
   .about-play {
@@ -360,12 +368,7 @@
     z-index: 0 !important;
   }
 }
-@media (max-width: 600px) {
-  .about-video {
-    max-width: 100vw;
-    height: 220px;
-  }
-}
+
 /* ===== */
 /* About End */
 /* ===== */
