@@ -229,7 +229,6 @@
 }
 
 .about-title {
-  font-weight: 500;
   margin-bottom: 1.5rem;
   color: var(--bg-blue);
 }
@@ -631,6 +630,12 @@
   color: var(--color-orange, #f29015);
   font-weight: 700 !important;
   font-size: 56px !important;
+}
+
+@media screen and (max-width: 600px) {
+  .ekosistem-title-highlight {
+    font-size: 2rem !important;
+  }
 }
 
 .ekosistem-desc {
