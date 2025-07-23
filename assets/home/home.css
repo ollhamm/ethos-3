@@ -1,6 +1,6 @@
 :root {
   --color-blue: var(--bg-blue);
-  --volor-white: #ffffff;
+  --color-white: #ffffff;
   --bg-blue: var(--bg-blue);
   --color-orange: #f29015;
   --bg-orange: #f29015;
@@ -84,7 +84,7 @@
   position: relative;
   display: flex;
   z-index: 4;
-  color: var(--volor-white);
+  color: var(--color-white);
 }
 
 .home-banner-bg-col,
@@ -95,13 +95,13 @@
 .home-banner-title {
   width: 100%;
   max-width: 800px;
-  color: var(--volor-white);
+  color: var(--color-white);
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
 .home-banner-subtitle {
-  color: var(--volor-white);
+  color: var(--color-white);
   max-width: 689px;
   margin-bottom: 2rem;
 }
@@ -112,7 +112,7 @@
   border-radius: 24px;
   border: none;
   background: var(--color-orange, #f29015);
-  color: var(--volor-white);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -273,7 +273,7 @@
   transform: translate(-50%, -50%);
   display: flex;
   padding: 1rem 1.2rem;
-  background-color: var(--volor-white);
+  background-color: var(--color-white);
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -902,7 +902,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--volor-white);
+  background-color: var(--color-white);
   border: none;
   display: flex;
   align-items: center;
@@ -1484,7 +1484,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--volor-white);
+  background-color: var(--color-white);
   border: none;
   display: flex;
   align-items: center;
