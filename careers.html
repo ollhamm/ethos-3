@@ -97,60 +97,91 @@
               </p>
             </div>
           </div>
-          <div class="career-filter-card">
-            <div class="career-filter-header">
-              <span class="career-filter-count">(244) Pekerjaan tersedia</span>
-              <a href="#" class="career-filter-link"
-                ><span> Lihat Semua </span>
-                <i
-                  class="fa fa-arrow-right"
-                  style="font-size: 14px !important; padding-left: 0.3rem"
-                ></i
-              ></a>
+          <div class="career-visible">
+            <div class="career-filter-card">
+              <div class="career-filter-header">
+                <span class="career-filter-count"
+                  >(244) Pekerjaan tersedia</span
+                >
+                <a href="#" class="career-filter-link"
+                  ><span> Lihat Semua </span>
+                  <i
+                    class="fa fa-arrow-right"
+                    style="font-size: 14px !important; padding-left: 0.3rem"
+                  ></i
+                ></a>
+              </div>
+              <form class="career-filter-form">
+                <input
+                  type="text"
+                  class="career-filter-search"
+                  placeholder="Cari lowongan yang And...."
+                />
+                <div class="custom-select">
+                  <select name="departemen">
+                    <option value="">Semua Departemen</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="produksi">Produksi</option>
+                    <option value="rnd">R&D</option>
+                  </select>
+                </div>
+                <div class="custom-select">
+                  <select name="lokasi">
+                    <option value="">Semua Lokasi</option>
+                    <option value="jakarta">Jakarta</option>
+                    <option value="bandung">Bandung</option>
+                    <option value="yogyakarta">Yogyakarta</option>
+                  </select>
+                </div>
+                <button type="submit" class="career-filter-btn">
+                  <i class="fa fa-search"></i> Cari Lowongan
+                </button>
+              </form>
             </div>
-            <form class="career-filter-form">
-              <input
-                type="text"
-                class="career-filter-search"
-                placeholder="Cari lowongan yang And...."
-              />
-              <div class="custom-select">
-                <select name="departemen">
-                  <option value="">Semua Departemen</option>
-                  <option value="marketing">Marketing</option>
-                  <option value="produksi">Produksi</option>
-                  <option value="rnd">R&D</option>
-                </select>
-              </div>
-              <div class="custom-select">
-                <select name="lokasi">
-                  <option value="">Semua Lokasi</option>
-                  <option value="jakarta">Jakarta</option>
-                  <option value="bandung">Bandung</option>
-                  <option value="yogyakarta">Yogyakarta</option>
-                </select>
-              </div>
-              <button type="submit" class="career-filter-btn">
-                <i class="fa fa-search"></i> Cari Lowongan
-              </button>
-            </form>
+            <img
+              src="./assets/career/components-career/career-dalam-filter.svg"
+              alt="dalam-filter"
+              class="career-dalam-filter"
+            />
           </div>
         </div>
-        <!-- career Hero End -->
 
         <!-- Career List Table Start -->
         <div class="career-list-wrapper">
           <table class="career-list">
             <tr class="career-row">
               <td>
-                <p class="career-title">
-                  Financial System Operational Lead - Finance Information System
-                </p>
-                <span style="color: #1b9fe0">subtitle</span>
+                <p class="career-title">Marketing Manager</p>
+                <span style="color: #1b9fe0"
+                  >Lorem, ipsum dolor sit amet consectetur adipisicing
+                  elit.</span
+                >
               </td>
               <td>
                 <span>Department</span>
-                <p class="career-table-data">HoldCo - CIO</p>
+                <p class="career-table-data">Marketing</p>
+              </td>
+              <td>
+                <span>Location</span>
+                <p class="career-table-data">Bandung</p>
+              </td>
+              <td>
+                <a href="/career-detail.html" class="career-detail-btn"
+                  >Lihat Detail</a
+                >
+              </td>
+            </tr>
+            <tr class="career-row">
+              <td>
+                <p class="career-title">Product Manager</p>
+                <span style="color: #1b9fe0"
+                  >Lorem, ipsum dolor sit amet consectetur adipisicing
+                  elit.</span
+                >
+              </td>
+              <td>
+                <span>Department</span>
+                <p class="career-table-data">Produksi</p>
               </td>
               <td>
                 <span>Location</span>
@@ -162,7 +193,48 @@
                 >
               </td>
             </tr>
+            <tfoot>
+              <tr>
+                <td
+                  colspan="4"
+                  style="
+                    text-align: center;
+                    border: none;
+                    padding: 0;
+                    background: transparent;
+                  "
+                >
+                  <nav
+                    aria-label="Halaman navigasi"
+                    class="custom-pagination-wrapper"
+                  >
+                    <ul class="custom-pagination">
+                      <li class="custom-page-item">
+                        <a class="custom-page-link is-active" href="#">1</a>
+                      </li>
+                      <li class="custom-page-item">
+                        <a class="custom-page-link" href="#">2</a>
+                      </li>
+                      <li class="custom-page-item">
+                        <a class="custom-page-link" href="#">3</a>
+                      </li>
+                      <li class="custom-page-item">
+                        <a class="custom-page-link btn-pagination" href="#">
+                          <i class="fa fa-chevron-right"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </td>
+              </tr>
+            </tfoot>
+            <!-- Pagination End -->
           </table>
+          <img
+            src="./assets/career/components-career/career-table.svg"
+            alt="dalam-filter"
+            class="career-dalam-table"
+          />
         </div>
       </section>
     </main>
