@@ -375,8 +375,6 @@
 }
 .career-detail-company {
   color: #fff;
-  font-size: 1.1rem;
-  font-weight: 500;
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
@@ -494,7 +492,7 @@
   margin-top: 0;
   padding: 0;
   overflow: hidden;
-  height: 70vh;
+  height: 60vh;
   display: flex;
 }
 .hero-detail-career-bottom {
