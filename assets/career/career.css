@@ -173,15 +173,7 @@
   margin-right: 0.5rem;
   z-index: 3;
 }
-.career-filter-select {
-  flex: 1 1 160px;
-  padding: 0.7rem 1.2rem;
-  border-radius: 2rem;
-  border: none;
-  font-size: 1rem;
-  outline: none;
-  margin-right: 0.5rem;
-}
+
 .career-filter-btn {
   background: var(--color-orange, #f29015);
   color: #fff;

@@ -439,7 +439,7 @@ button {
   position: relative;
   width: 100%;
   flex: 1 1 160px;
-  z-index: 4;
+  z-index: 9999;
 }
 
 .custom-select select {
@@ -452,7 +452,7 @@ button {
 
 .custom-select__selected {
   min-width: 160px;
-  background: #fff;
+  background-color: #fff;
   color: var(--color-gray);
   font-weight: 600 !important;
   padding: 0.7rem 1.2rem;
@@ -477,24 +477,26 @@ button {
 }
 .custom-select.open .custom-select__selected:after {
   transform: rotate(-180deg);
+  background-color: #ffff;
 }
 .custom-select__options {
   position: absolute;
   left: 0;
-  background-color: #fff;
+  background-color: #fff !important;
   font-weight: 600 !important;
   right: 0;
-  background: var();
   border-radius: 1.5rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-  z-index: 100;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+  z-index: 99999 !important;
   max-height: 220px;
   overflow-y: auto;
   display: none;
   margin-top: 0.2rem;
+  top: 100%;
+  border: 1px solid #e0e0e0;
 }
 .custom-select.open .custom-select__options {
-  display: block;
+  display: block !important;
 }
 .custom-select__option {
   padding: 0.7rem 1.2rem;
@@ -502,12 +504,30 @@ button {
   color: var(--color-gray);
   transition: all 0.3s;
   font-size: 1rem;
+  background-color: #fff !important;
 }
 .custom-select__option:hover,
 .custom-select__option.selected {
-  background: #f0f4fa;
+  background: #f0f4fa !important;
   color: var(--bg-blue, #359ed9);
 }
+
+/* Pastikan parent container tidak memotong dropdown */
+.news-filter-card,
+.news-left-column,
+.news-layout,
+.news-filter-wrapper,
+.news-inner,
+.section {
+  overflow: visible !important;
+  position: relative;
+}
+
+/* Force dropdown to be visible */
+.custom-select.open {
+  z-index: 99999 !important;
+}
+
 @media (max-width: 768px) {
   .custom-select,
   .custom-select__selected,
