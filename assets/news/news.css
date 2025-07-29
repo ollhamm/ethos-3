@@ -909,14 +909,13 @@
   top: 0;
   left: 0;
   transition: transform 0.4s cubic-bezier(0.4, 1.2, 0.6, 1);
+  transform: scale(1.08);
 }
-
 .event-card.active .event-card-img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
-
 .event-card.active:hover .event-card-img {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 .event-overlay {
@@ -935,7 +934,7 @@
 }
 
 .event-card.active .event-overlay {
-  background: linear-gradient(transparent, rgba(241, 144, 21, 0.9));
+  background: linear-gradient(transparent 30%, #f19015 80%, #f19015 100%);
 }
 
 .event-overlay-content {

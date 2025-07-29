@@ -68,7 +68,7 @@ header .navbar {
 }
 
 .navbar-menu a {
-  color: #ffff;
+  color: #fff;
   text-decoration: none;
   position: relative;
   transition: color 0.2s;
