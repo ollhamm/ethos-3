@@ -33,12 +33,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentSlide = 0;
 
     function showSlide(index) {
+        // Hide all slides
         slides.forEach((slide, i) => {
             slide.classList.toggle('active', i === index);
         });
+
+        // Update dots
         dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === index);
         });
+
         currentSlide = index;
     }
 
@@ -61,5 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
         dot.addEventListener('click', () => showSlide(index));
     });
 
-    // Auto slide setiap 5 detik
+    // Initialize first slide
+    if (slides.length > 0) {
+        showSlide(0);
+    }
 });
