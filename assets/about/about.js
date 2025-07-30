@@ -69,4 +69,109 @@ document.addEventListener('DOMContentLoaded', function () {
     if (slides.length > 0) {
         showSlide(0);
     }
+
+    // Company History Timeline
+    const timelineYears = document.querySelectorAll('.timeline-year-dot');
+    const historyDetails = document.querySelectorAll('.history-detail');
+    const timelinePrev = document.getElementById('timelinePrev');
+    const timelineNext = document.getElementById('timelineNext');
+    let currentYearIndex = 0;
+
+    function showHistoryDetail(index) {
+        // Hide all history details and remove active class
+        historyDetails.forEach((detail, i) => {
+            detail.style.display = i === index ? 'grid' : 'none';
+            detail.classList.remove('active');
+        });
+
+        // Add active class to current detail with delay for animation
+        setTimeout(() => {
+            if (historyDetails[index]) {
+                historyDetails[index].classList.add('active');
+            }
+        }, 100);
+
+        // Update timeline years
+        timelineYears.forEach((year, i) => {
+            year.classList.toggle('active', i === index);
+        });
+
+        // Update navigation buttons
+        if (timelinePrev) timelinePrev.disabled = index === 0;
+        if (timelineNext) timelineNext.disabled = index === timelineYears.length - 1;
+
+        currentYearIndex = index;
+    }
+
+    function nextYear() {
+        if (currentYearIndex < timelineYears.length - 1) {
+            showHistoryDetail(currentYearIndex + 1);
+        }
+    }
+
+    function prevYear() {
+        if (currentYearIndex > 0) {
+            showHistoryDetail(currentYearIndex - 1);
+        }
+    }
+
+    // Event listeners untuk timeline
+    timelineYears.forEach((year, index) => {
+        year.addEventListener('click', () => showHistoryDetail(index));
+    });
+
+    if (timelinePrev) timelinePrev.addEventListener('click', prevYear);
+    if (timelineNext) timelineNext.addEventListener('click', nextYear);
+
+    // Initialize first year
+    if (timelineYears.length > 0) {
+        showHistoryDetail(0);
+    }
 });
+
+// company history section
+// Performance optimization: Debounce scroll events
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Apply debouncing to scroll events
+const debouncedScrollHandler = debounce(function () {
+    // Any scroll-based animations can be added here
+}, 16); // ~60fps
+
+window.addEventListener('scroll', debouncedScrollHandler);
+
+// Add CSS classes for animations
+document.addEventListener('DOMContentLoaded', function () {
+    // Add animation classes to body
+    document.body.classList.add('about-page');
+
+    // Initialize tooltips for interactive elements
+    const interactiveElements = document.querySelectorAll('[data-tooltip]');
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', function () {
+            const tooltip = this.getAttribute('data-tooltip');
+            if (tooltip) {
+                showTooltip(this, tooltip);
+            }
+        });
+
+        element.addEventListener('mouseleave', function () {
+            hideTooltip();
+        });
+    });
+});
+
+
+
+
+
