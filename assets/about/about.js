@@ -171,6 +171,86 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Core Value Nawasila Section Animations
+document.addEventListener('DOMContentLoaded', function () {
+    // Nawasila List Functionality
+    const nawasilaItems = document.querySelectorAll('.nawasila-item');
+    const nawasilaCardTitle = document.querySelector('.nawasila-card-title');
+    const nawasilaCardDesc = document.querySelector('.nawasila-card-desc');
+
+    // Fungsi untuk set aktif berdasarkan index
+    function setNawasilaActive(idx) {
+        nawasilaItems.forEach((item, i) => item.classList.toggle('active', i === idx));
+
+        // Update card content
+        if (nawasilaCardTitle && nawasilaCardDesc) {
+            const activeItem = nawasilaItems[idx];
+            const title = activeItem.querySelector('.nawasila-title').textContent;
+            const desc = activeItem.querySelector('.nawasila-desc-item').textContent;
+
+            nawasilaCardTitle.textContent = title;
+            nawasilaCardDesc.textContent = desc;
+        }
+    }
+
+    // Set default aktif ke index 0
+    if (nawasilaItems.length > 0) {
+        setNawasilaActive(0);
+    }
+
+    nawasilaItems.forEach((item, idx) => {
+        item.addEventListener('click', function () {
+            setNawasilaActive(idx);
+        });
+    });
+
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+            }
+        });
+    }, observerOptions);
+
+    nawasilaItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = 'all 0.6s ease';
+        observer.observe(item);
+    });
+
+    // Hover effects for Nawasila items
+    nawasilaItems.forEach(item => {
+        item.addEventListener('mouseenter', function () {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            }
+        });
+
+        item.addEventListener('mouseleave', function () {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(0) scale(1)';
+            }
+        });
+    });
+
+    // Image hover effect
+    const coreValueImage = document.querySelector('.core-value-image');
+    if (coreValueImage) {
+        coreValueImage.addEventListener('mouseenter', function () {
+            this.style.transform = 'scale(1.05)';
+        });
+
+        coreValueImage.addEventListener('mouseleave', function () {
+            this.style.transform = 'scale(1)';
+        });
+    }
+});
+
 
 
 
