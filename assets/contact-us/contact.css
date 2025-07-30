@@ -265,7 +265,7 @@
 /* Contact Info Card */
 .contact-info-card {
   background: #fff;
-  padding: 2rem;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
   height: 100%;
