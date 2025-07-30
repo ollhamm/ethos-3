@@ -93,8 +93,17 @@ button {
   line-height: 1.6;
 }
 
+.title-highlight {
+  color: var(--color-orange, #f29015);
+  font-weight: 700 !important;
+  font-size: 56px !important;
+}
+
 /* Tablet */
 @media screen and (max-width: 900px) {
+  .title-highlight {
+    font-size: 2.75rem !important;
+  }
   h1 {
     font-size: 2.75rem !important; /* 44px */
   }
@@ -123,6 +132,9 @@ button {
 
 /* Mobile */
 @media screen and (max-width: 600px) {
+  .title-highlight {
+    font-size: 2.25rem !important;
+  }
   h1 {
     font-size: 2.25rem !important; /* 36px */
   }
@@ -151,6 +163,9 @@ button {
 
 /* Extra Small (<=400px) */
 @media screen and (max-width: 400px) {
+  .title-highlight {
+    font-size: 2rem !important;
+  }
   h1 {
     font-size: 2rem !important; /* 32px */
   }

@@ -38,6 +38,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
+  border-bottom-right-radius: 8rem;
 }
 
 .career-hero-overlay {
@@ -53,6 +54,7 @@
   );
   opacity: 0.7;
   pointer-events: none;
+  border-bottom-right-radius: 8rem;
 }
 
 .career-hero-content-wrapper {

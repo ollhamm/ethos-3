@@ -1,0 +1,884 @@
+:root {
+  --color-white: #fff;
+  --color-blue: #1b9fe0;
+  --bg-blue: #1b9fe0;
+  --bg-blue-hover: #188fc9;
+  --color-orange: #f29015;
+  --bg-orange: #f29015;
+  --bg-orange-hover: #d87c0c;
+  --color-gray: #000000;
+  --color-title: #000000;
+  --radius: 24px;
+}
+
+/* About Hero Section */
+.about-hero-section {
+  position: relative;
+  min-height: 60vh;
+  display: block;
+  padding: 0 0 5rem 0;
+  margin: 0;
+  overflow: visible;
+  border-bottom-right-radius: 8rem;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.about-hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-bottom-right-radius: 8rem;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    #359ed9 0%,
+    rgba(53, 158, 217, 0.95) 50%,
+    rgba(53, 158, 217, 0.7) 60%,
+    rgba(53, 158, 217, 0) 100%
+  );
+  opacity: 0.7;
+  pointer-events: none;
+  border-bottom-right-radius: 8rem;
+}
+
+.about-hero-content-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  padding: 3rem 6rem;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.about-hero-content {
+  padding-top: 1rem;
+  max-width: 600px;
+  color: #fff;
+  text-align: left;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.about-hero-title {
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.about-hero-subtitle {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-hero-section {
+    border-bottom-right-radius: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .about-hero-content-wrapper {
+    top: 35%;
+    padding: 3rem 2rem;
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-width: 800px;
+    transform: translateY(-40%);
+  }
+
+  .about-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .about-hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-title {
+    font-size: 2rem;
+  }
+
+  .about-hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* About Description Section */
+.about-description-section {
+  width: 100%;
+  position: relative;
+}
+
+.about-description-inner {
+  margin: 0 auto;
+}
+
+.about-description-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-description-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.about-description-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-gray);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.about-description-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-description-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-gray);
+}
+
+.about-description-text p {
+  margin-bottom: 1.5rem;
+}
+
+.about-description-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-description-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.about-card {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.about-card-container {
+  position: relative;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 200px;
+}
+
+.about-card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.about-card-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  min-height: 260px;
+  max-height: 300px;
+  background: #e9ecef;
+  transform: scale(1.08);
+  transition: transform 0.4s cubic-bezier(0.4, 1.2, 0.6, 1);
+}
+
+.about-card-container:hover .about-card-img {
+  transform: scale(1);
+}
+
+.about-card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem 1rem 1rem 1rem;
+  color: #fff;
+  width: 100%;
+  background: linear-gradient(transparent, rgba(27, 159, 224, 0.9));
+  min-height: 60px;
+  display: flex;
+  align-items: flex-end;
+  transition: background 0.3s;
+}
+
+.about-card-overlay-content {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.about-card-overlay-content h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.about-card-overlay-content p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.about-card-container:hover .about-card-overlay-content {
+  opacity: 1;
+}
+
+.about-card-container:hover .about-card-overlay {
+  background: linear-gradient(transparent, rgba(27, 159, 224, 0.95));
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-description-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-description-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-description-section {
+    padding: 3rem 0 4rem 0;
+  }
+
+  .about-description-inner {
+    padding: 0 1.5rem;
+  }
+
+  .about-description-title {
+    font-size: 2.5rem;
+  }
+
+  .about-description-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .about-description-text {
+    font-size: 1rem;
+  }
+
+  .about-description-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-description-title {
+    font-size: 2rem;
+  }
+
+  .about-description-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-description-inner {
+    padding: 0 1rem;
+  }
+}
+
+/* hulu hilir start */
+.sejarah-ethos-class {
+  position: relative;
+  min-height: 420px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 100%;
+  z-index: 0;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  background: none;
+}
+
+.sejarah-about-inner {
+  margin: 0 auto;
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 6rem;
+  border-top-right-radius: 6rem;
+  border-bottom-right-radius: 3rem;
+  padding: 5rem 4rem;
+  position: relative;
+  height: auto;
+  height: 100%;
+  z-index: 3;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.sejarah-about-bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    #359ed9 0%,
+    rgba(53, 158, 217, 0.95) 50%,
+    rgba(53, 158, 217, 0.7) 60%,
+    rgba(53, 158, 217, 0) 100%
+  );
+  opacity: 0.8;
+  pointer-events: none;
+}
+.keunggulan-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  display: none;
+}
+.sejarah-about-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 420px;
+}
+.sejarah-about-left {
+  color: #fff;
+  width: 100%;
+  max-width: 500px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.sejarah-about-desc-item {
+  color: var(--color-gray);
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+  font-weight: 500 !important;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeInDown 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 600px;
+  margin-left: 4rem;
+  z-index: 4;
+}
+
+.sejarah-about-desc-item.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.sejarah-about-title {
+  margin-bottom: 3rem;
+  text-align: start;
+}
+.sejarah-about-list {
+  list-style: none;
+  padding: 0;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sejarah-about-item {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  margin-bottom: 2rem;
+  border: 1.5px solid #fff;
+  border-radius: var(--radius);
+  transition: background 0.2s, border 0.2s;
+  cursor: pointer;
+  gap: 2rem;
+}
+.sejarah-about-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 50px;
+  border-radius: var(--radius);
+  background: var(--color-orange, #f29015);
+  color: #fff;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+.sejarah-about-text {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.sejarah-about-item h6.sejarah-about-number,
+.sejarah-about-item h6.sejarah-about-text {
+  margin: 0;
+  padding: 0;
+}
+.sejarah-about-item:last-child {
+  margin-bottom: 0;
+}
+.sejarah-about-item.active {
+  background: #fff;
+}
+.sejarah-about-item.active .sejarah-about-number {
+  background: var(--color-orange, #f29015);
+  color: #fff;
+}
+.sejarah-about-item.active .sejarah-about-text {
+  color: #222;
+}
+.sejarah-about-text {
+  color: #fff;
+}
+.sejarah-about-item:hover {
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.sejarah-about-item:hover .sejarah-about-number {
+  background: var(--color-orange, #f29015);
+  color: #fff;
+}
+.sejarah-about-item:hover .sejarah-about-text {
+  color: #222;
+  font-weight: 600;
+}
+.sejarah-about-item.active:hover {
+  background: #fff;
+  /* Efek hover pada item aktif tetap sama seperti aktif */
+}
+
+@media (max-width: 768px) {
+  .keunggulan-inner {
+    padding: 6rem 2rem;
+  }
+  .sejarah-ethos-class {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .sejarah-about-desc-item {
+    position: static;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Awards & Recognition Section */
+.awards-section {
+  width: 100%;
+  position: relative;
+  background-color: var(--bg-blue);
+  height: 100vh;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+
+.awards-inner {
+  margin: 0 auto;
+}
+
+.awards-header {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  margin-bottom: 4rem;
+}
+
+.awards-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.awards-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-white);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.awards-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.award-card {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.award-card-container {
+  position: relative;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 260px;
+}
+
+.award-card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.award-card-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  min-height: 260px;
+  max-height: 300px;
+  background: #e9ecef;
+  transform: scale(1.08);
+  transition: transform 0.4s cubic-bezier(0.4, 1.2, 0.6, 1);
+}
+
+.award-card-container:hover .award-card-img {
+  transform: scale(1);
+}
+
+.award-card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem 1rem 1rem 1rem;
+  color: #fff;
+  width: 100%;
+  background: linear-gradient(transparent, rgba(27, 159, 224, 0.9));
+  min-height: 60px;
+  display: flex;
+  align-items: flex-end;
+  transition: background 0.3s;
+}
+
+.award-card-overlay-content {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.award-card-overlay-content h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.award-card-overlay-content p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.award-card-container:hover .award-card-overlay-content {
+  opacity: 1;
+}
+
+.award-card-container:hover .award-card-overlay {
+  background: linear-gradient(transparent, rgba(27, 159, 224, 0.95));
+}
+
+/* Responsive Design untuk Awards */
+@media (max-width: 1024px) {
+  .awards-cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .awards-inner {
+    padding: 0 1.5rem;
+  }
+
+  .awards-title {
+    font-size: 2.5rem;
+  }
+
+  .awards-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .awards-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .awards-title {
+    font-size: 2rem;
+  }
+
+  .awards-subtitle {
+    font-size: 1rem;
+  }
+
+  .awards-inner {
+    padding: 0 1rem;
+  }
+}
+
+/* Awards Carousel */
+.awards-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  overflow: hidden;
+}
+
+.awards-carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.award-slide {
+  display: flex;
+  min-width: 100%;
+  gap: 3rem;
+  align-items: stretch;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+}
+
+.award-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.award-image-card {
+  flex: 1;
+  max-width: 400px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.award-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.award-description-card {
+  flex: 1;
+  padding: 2rem;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.award-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.award-year {
+  font-size: 1.1rem;
+  color: var(--color-orange);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.award-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-gray);
+  margin-bottom: 2rem;
+}
+
+.award-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.award-category,
+.award-issuer {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  font-weight: 500;
+}
+
+.award-category {
+  color: var(--color-blue);
+  font-weight: 600;
+}
+
+/* Navigation Buttons */
+.award-nav-btn {
+  position: absolute;
+  left: 7rem;
+  bottom: 1rem;
+  background: var(--color-white);
+  color: var(--color-blue);
+  border: none;
+  width: 80px;
+  height: 40px;
+  border-radius: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background 0.2s ease, color 0.2s ease;
+  z-index: 10;
+}
+
+.award-nav-btn:hover,
+.award-nav-btn:active,
+.award-nav-btn:focus {
+  background: #e5e5e5;
+  outline: none;
+}
+
+.award-prev-btn {
+  left: 7rem;
+}
+
+.award-next-btn {
+  left: calc(7rem + 100px);
+}
+
+/* Dots Indicator */
+.award-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.award-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.award-dot.active {
+  background: var(--color-blue);
+  transform: scale(1.2);
+}
+
+/* Responsive Design untuk Awards Carousel */
+@media (max-width: 768px) {
+  .award-slide {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .award-image-card,
+  .award-description-card {
+    max-width: 100%;
+  }
+
+  .award-nav-btn {
+    width: 60px;
+    height: 30px;
+    font-size: 12px;
+    left: 2rem;
+    bottom: 0;
+  }
+
+  .award-prev-btn {
+    left: 2rem;
+  }
+
+  .award-next-btn {
+    left: calc(2rem + 70px);
+  }
+}
+/* ===== */
+/* Keunggulan End */
+/* ===== */

@@ -33,6 +33,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  border-bottom-right-radius: 8rem;
 }
 
 .home-banner-section::before {
@@ -49,6 +50,7 @@
   );
   opacity: 1;
   pointer-events: none;
+  border-bottom-right-radius: 8rem;
 }
 
 .hero-atas-title {
@@ -233,12 +235,6 @@
   color: var(--bg-blue);
 }
 
-.about-title-highlight {
-  color: var(--color-orange, #f29015);
-  font-weight: 700 !important;
-  font-size: 56px !important;
-}
-
 .about-desc {
   color: var(--color-gray);
   margin-bottom: 1.2rem;
@@ -352,9 +348,7 @@
     text-align: center;
     padding: 0;
   }
-  .about-title-highlight {
-    font-size: 2rem !important;
-  }
+
   .about-kanan {
     width: 140px !important;
     max-width: 30vw;
@@ -623,18 +617,6 @@
   margin-bottom: 1.5rem;
   color: var(--bg-blue);
   margin-top: 6rem;
-}
-
-.ekosistem-title-highlight {
-  color: var(--color-orange, #f29015);
-  font-weight: 700 !important;
-  font-size: 56px !important;
-}
-
-@media screen and (max-width: 600px) {
-  .ekosistem-title-highlight {
-    font-size: 2rem !important;
-  }
 }
 
 .ekosistem-desc {
