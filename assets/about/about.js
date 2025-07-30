@@ -182,14 +182,33 @@ document.addEventListener('DOMContentLoaded', function () {
     function setNawasilaActive(idx) {
         nawasilaItems.forEach((item, i) => item.classList.toggle('active', i === idx));
 
-        // Update card content
+        // Update card content with slide animation
         if (nawasilaCardTitle && nawasilaCardDesc) {
             const activeItem = nawasilaItems[idx];
             const title = activeItem.querySelector('.nawasila-title').textContent;
             const desc = activeItem.querySelector('.nawasila-desc-item').textContent;
 
-            nawasilaCardTitle.textContent = title;
-            nawasilaCardDesc.textContent = desc;
+            // Add slide-out animation
+            nawasilaCardTitle.classList.add('slide-out');
+            nawasilaCardDesc.classList.add('slide-out');
+
+            // After slide-out animation, update content and slide-in
+            setTimeout(() => {
+                nawasilaCardTitle.textContent = title;
+                nawasilaCardDesc.textContent = desc;
+
+                // Remove slide-out and add slide-in
+                nawasilaCardTitle.classList.remove('slide-out');
+                nawasilaCardDesc.classList.remove('slide-out');
+                nawasilaCardTitle.classList.add('slide-in');
+                nawasilaCardDesc.classList.add('slide-in');
+
+                // After slide-in animation, reset to normal state
+                setTimeout(() => {
+                    nawasilaCardTitle.classList.remove('slide-in');
+                    nawasilaCardDesc.classList.remove('slide-in');
+                }, 250);
+            }, 250);
         }
     }
 
@@ -214,14 +233,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, index * 100);
             }
         });
-    }, observerOptions);
-
-    nawasilaItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(30px)';
-        item.style.transition = 'all 0.6s ease';
-        observer.observe(item);
     });
+
+
 
     // Hover effects for Nawasila items
     nawasilaItems.forEach(item => {

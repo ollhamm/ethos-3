@@ -1411,30 +1411,11 @@
   line-height: 1.6;
 }
 
-.core-value-kiri-bawah {
-  position: absolute;
-  bottom: -50px;
-  left: -50px;
-  width: 200px;
-  height: 200px;
-  opacity: 0.1;
-  z-index: 1;
-}
-
-.core-value-atas-kanan {
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 200px;
-  height: 200px;
-  opacity: 0.1;
-  z-index: 1;
-}
-
 .core-value-inner {
   position: relative;
   z-index: 2;
   padding: 3rem 4rem;
+  z-index: 6;
 }
 
 .core-value-header {
@@ -1468,12 +1449,28 @@
 .core-value-left {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 20;
 }
 
+/* nawasila */
 .nawasila-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  position: relative;
+  z-index: 15;
+}
+
+.nawasila-kiri-bawah {
+  position: absolute;
+  bottom: 0;
+  left: -9rem;
+  width: 600px;
+  height: auto;
+  z-index: 10;
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .nawasila-item {
@@ -1524,6 +1521,7 @@
 
 .nawasila-content {
   flex: 1;
+  z-index: 4;
 }
 
 .nawasila-title {
@@ -1540,6 +1538,8 @@
 .nawasila-card-content {
   padding: 2rem;
   color: #333;
+  position: relative;
+  overflow: hidden;
 }
 
 .nawasila-card-title {
@@ -1547,6 +1547,9 @@
   font-weight: 700;
   margin-bottom: 1rem;
   color: var(--color-title);
+  transition: all 0.5s ease;
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .nawasila-card-desc {
@@ -1554,6 +1557,30 @@
   line-height: 1.6;
   color: #666;
   margin: 0;
+  transition: all 0.5s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Slide animation classes */
+.nawasila-card-title.slide-out {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.nawasila-card-title.slide-in {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.nawasila-card-desc.slide-out {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.nawasila-card-desc.slide-in {
+  transform: translateX(100%);
+  opacity: 0;
 }
 
 .core-value-right {
