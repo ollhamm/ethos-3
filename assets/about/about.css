@@ -134,6 +134,27 @@
   position: relative;
 }
 
+.about-get-to-know-bawah {
+  position: absolute;
+  bottom: -3.5rem;
+  left: 0;
+  width: 400px;
+  height: auto;
+  z-index: -1;
+  opacity: 1;
+  pointer-events: none;
+}
+.about-get-to-know-atas-kanan {
+  position: absolute;
+  top: 7rem;
+  right: 0;
+  width: 400px;
+  height: auto;
+  z-index: -1;
+  opacity: 1;
+  pointer-events: none;
+}
+
 .about-description-inner {
   margin: 0 auto;
 }
@@ -538,9 +559,29 @@
   height: 100%;
 }
 
+.awards-kiri-bawah {
+  position: absolute;
+  bottom: 0;
+  left: -12rem;
+  width: 600px;
+  height: auto;
+  z-index: 1;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.awards-atas-kanan {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 180px;
+  height: auto;
+  opacity: 1;
+  z-index: 1;
+}
+
 .awards-inner {
   margin: 0 auto;
-  z-index: 3;
 }
 
 .awards-header {
@@ -704,6 +745,7 @@
   max-width: 1200px;
   margin: 3rem auto 0;
   overflow: hidden;
+  z-index: 2;
 }
 
 .awards-carousel-container {
@@ -1012,6 +1054,18 @@
 
 .history-section {
   background: #fff;
+  position: relative;
+}
+
+.news-kanan-bawah {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: auto;
+  z-index: 1;
+  opacity: 1;
+  pointer-events: none;
 }
 .history-timeline-container {
   background-color: var(--bg-blue);
@@ -1187,6 +1241,7 @@
   grid-template-columns: 1fr 1.1fr;
   align-items: start;
   gap: 2.5rem;
+  z-index: 3;
   margin: 0 auto;
   transition: box-shadow 0.2s;
 }
@@ -1195,12 +1250,14 @@
   flex-direction: column;
   align-items: start;
   justify-content: start;
+  z-index: 3;
 }
 .history-detail-image {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  z-index: 3;
 }
 .history-detail-image img {
   width: 100%;
@@ -1210,6 +1267,7 @@
   border-radius: 16px;
   object-fit: cover;
   margin: 0;
+  z-index: 3;
 }
 
 /* Timeline Year Dot Animations */
