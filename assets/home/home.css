@@ -340,7 +340,7 @@
   .about-video,
   .about-thumbnail {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
     border-radius: var(--radius);
   }
   .about-play {
@@ -685,6 +685,7 @@
 .ekosistem-btn-prev:hover,
 .ekosistem-btn-next:hover {
   background: #188fc9;
+  outline: none !important;
   transition: all 0.3s ease-in-out;
 }
 
@@ -994,7 +995,7 @@
   transition: background-image 0.5s;
   margin-bottom: 6rem;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .partnership-section {
     margin-bottom: 2rem;
   }
