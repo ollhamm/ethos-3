@@ -213,6 +213,118 @@
   gap: 1.5rem;
 }
 
+/* Composite Layout Styles */
+.about-composite-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.about-composite-main {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  z-index: 1;
+  margin-left: auto;
+}
+
+.about-composite-main-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border-bottom-left-radius: 3rem;
+  border-top-right-radius: 4rem;
+}
+
+.about-composite-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 1.2, 0.6, 1);
+}
+
+.about-composite-main-container:hover .about-composite-main-img {
+  transform: scale(1.05);
+}
+
+.about-composite-secondary {
+  position: absolute;
+  top: 16%;
+  left: 20px;
+  width: 45%;
+  height: 70%;
+  z-index: 2;
+  background-color: #fff;
+  border-radius: var(--radius);
+  padding: 0.6rem;
+  border-bottom-right-radius: 3rem;
+}
+
+.about-composite-secondary-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  border-top-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+  overflow: hidden;
+}
+
+.about-composite-secondary-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 1.2, 0.6, 1);
+}
+
+.about-composite-secondary-container:hover .about-composite-secondary-img {
+  transform: scale(1.05);
+}
+
+.about-composite-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem 1rem 1rem 1rem;
+  color: #fff;
+  width: 100%;
+  background: linear-gradient(transparent, rgba(27, 159, 224, 0.9));
+  min-height: 60px;
+  display: flex;
+  align-items: flex-end;
+  transition: background 0.3s;
+}
+
+.about-composite-overlay-content {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.about-composite-overlay-content h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.about-composite-overlay-content p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.about-composite-main-container:hover .about-composite-overlay,
+.about-composite-secondary-container:hover .about-composite-overlay {
+  background: linear-gradient(transparent, rgba(27, 159, 224, 0.95));
+}
+
 .about-card {
   break-inside: avoid;
   margin-bottom: 1.5rem;
@@ -307,6 +419,15 @@
   .about-description-cards {
     grid-template-columns: 1fr 1fr;
   }
+
+  .about-composite-container {
+    height: 350px;
+  }
+
+  .about-composite-secondary {
+    width: 40%;
+    height: 65%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -334,6 +455,21 @@
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+
+  .about-composite-container {
+    height: 300px;
+  }
+
+  .about-composite-main {
+    width: 75%;
+  }
+
+  .about-composite-secondary {
+    width: 45%;
+    height: 70%;
+    top: 15px;
+    left: 15px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -347,6 +483,29 @@
 
   .about-description-inner {
     padding: 0 1rem;
+  }
+
+  .about-composite-container {
+    height: 250px;
+  }
+
+  .about-composite-main {
+    width: 80%;
+  }
+
+  .about-composite-secondary {
+    width: 50%;
+    height: 75%;
+    top: 10px;
+    right: 10px;
+  }
+
+  .about-composite-overlay-content h6 {
+    font-size: 1rem;
+  }
+
+  .about-composite-overlay-content p {
+    font-size: 0.8rem;
   }
 }
 
