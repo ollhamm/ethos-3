@@ -234,35 +234,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-
-
-
-    // Hover effects for Nawasila items
-    nawasilaItems.forEach(item => {
-        item.addEventListener('mouseenter', function () {
-            if (!this.classList.contains('active')) {
-                this.style.transform = 'translateY(-5px) scale(1.02)';
-            }
-        });
-
-        item.addEventListener('mouseleave', function () {
-            if (!this.classList.contains('active')) {
-                this.style.transform = 'translateY(0) scale(1)';
-            }
-        });
-    });
-
-    // Image hover effect
-    const coreValueImage = document.querySelector('.core-value-image');
-    if (coreValueImage) {
-        coreValueImage.addEventListener('mouseenter', function () {
-            this.style.transform = 'scale(1.05)';
-        });
-
-        coreValueImage.addEventListener('mouseleave', function () {
-            this.style.transform = 'scale(1)';
-        });
-    }
 });
 
 

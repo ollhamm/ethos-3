@@ -155,6 +155,12 @@
   pointer-events: none;
 }
 
+@media screen and (max-width: 768px) {
+  .about-get-to-know-atas-kanan {
+    display: none;
+  }
+}
+
 .about-description-inner {
   margin: 0 auto;
 }
@@ -533,13 +539,31 @@
   /* Efek hover pada item aktif tetap sama seperti aktif */
 }
 
-@media (max-width: 768px) {
-  .keunggulan-inner {
-    padding: 6rem 2rem;
-  }
+/* Tablet Responsive */
+@media (max-width: 1024px) {
   .sejarah-ethos-class {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .sejarah-about-inner {
+    padding: 3rem 2rem;
+  }
+
+  .sejarah-about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sejarah-about-left {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .sejarah-about-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .sejarah-about-desc-item {
@@ -548,6 +572,122 @@
     margin-left: 0;
     margin-top: 1rem;
     font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .sejarah-about-item {
+    gap: 1.5rem;
+  }
+
+  .sejarah-about-number {
+    width: 70px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .sejarah-ethos-class {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .sejarah-about-inner {
+    padding: 2rem 1.5rem;
+    border-radius: 2rem;
+  }
+
+  .sejarah-about-content {
+    min-height: auto;
+  }
+
+  .sejarah-about-left {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sejarah-about-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .sejarah-about-list {
+    margin-bottom: 1rem;
+  }
+
+  .sejarah-about-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sejarah-about-number {
+    width: 60px;
+    height: 40px;
+    font-size: 1rem;
+    margin-right: 0;
+  }
+
+  .sejarah-about-text {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .sejarah-about-desc-item {
+    position: static;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+}
+
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+  .sejarah-ethos-class {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .sejarah-about-inner {
+    padding: 1.5rem 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .sejarah-about-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .sejarah-about-item {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .sejarah-about-number {
+    width: 50px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .sejarah-about-text {
+    font-size: 0.9rem;
+  }
+
+  .sejarah-about-desc-item {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
   }
 }
 
@@ -1363,12 +1503,226 @@
   animation: zoomIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes zoomIn {
-  0% {
-    transform: scale(0.9);
+/* History Section Responsive */
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .history-section {
+    padding: 0 2rem;
   }
-  100% {
-    transform: scale(1);
+
+  .history-header {
+    margin-bottom: 3rem;
+  }
+
+  .history-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .history-subtitle {
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+
+  .history-timeline-container {
+    padding: 2px 0.5rem;
+  }
+
+  .timeline-years {
+    gap: 0.5rem;
+  }
+
+  .timeline-year-dot {
+    margin: 0 4px;
+  }
+
+  .timeline-year-dot .year-label {
+    font-size: 0.85rem;
+  }
+
+  .history-detail {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  .history-detail-content {
+    order: 1;
+  }
+
+  .history-detail-image {
+    order: 2;
+    justify-content: center;
+  }
+
+  .history-detail-image img {
+    max-width: 100%;
+    max-height: 250px;
+  }
+
+  .news-kanan-bawah {
+    width: 300px;
+    bottom: -6rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .history-section {
+    padding: 0 1rem;
+  }
+
+  .history-header {
+    margin-bottom: 2rem;
+  }
+
+  .history-title {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .history-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .history-timeline-container {
+    padding: 2px 0.25rem;
+    border-radius: 16px;
+  }
+
+  .history-timeline {
+    margin-bottom: 2rem;
+  }
+
+  .timeline-arrow {
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    height: 28px;
+  }
+
+  .timeline-years {
+    gap: 0.25rem;
+  }
+
+  .timeline-year-dot {
+    margin: 0 2px;
+  }
+
+  .timeline-year-dot .dot {
+    width: 16px;
+    height: 16px;
+    top: 8px;
+  }
+
+  .timeline-year-dot .year-label {
+    font-size: 0.75rem;
+    margin-top: 6px;
+  }
+
+  .timeline-years::before {
+    top: 16px;
+    height: 3px;
+  }
+
+  .history-detail {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+    gap: 1.5rem;
+  }
+
+  .history-detail-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .history-detail-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .history-detail-image img {
+    max-height: 200px;
+    border-radius: 12px;
+  }
+
+  .news-kanan-bawah {
+    width: 250px;
+    bottom: -4rem;
+  }
+}
+
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+  .history-section {
+    padding: 0 0.5rem;
+  }
+
+  .history-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .history-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .history-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .history-timeline-container {
+    padding: 1px 0.25rem;
+    border-radius: 12px;
+  }
+
+  .timeline-arrow {
+    font-size: 1.25rem;
+    padding: 0 0.25rem;
+    height: 24px;
+  }
+
+  .timeline-year-dot .dot {
+    width: 14px;
+    height: 14px;
+    top: 6px;
+  }
+
+  .timeline-year-dot .year-label {
+    font-size: 0.7rem;
+    margin-top: 4px;
+  }
+
+  .timeline-years::before {
+    top: 14px;
+    height: 2px;
+  }
+
+  .history-detail {
+    padding: 1rem 0.75rem;
+    border-radius: 12px;
+    gap: 1rem;
+  }
+
+  .history-detail-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .history-detail-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .history-detail-image img {
+    max-height: 150px;
+    border-radius: 8px;
+  }
+
+  .news-kanan-bawah {
+    width: 200px;
+    bottom: -3rem;
   }
 }
 
@@ -1555,7 +1909,7 @@
 .nawasila-card-desc {
   font-size: 1rem;
   line-height: 1.6;
-  color: #666;
+  color: var(--color-gray);
   margin: 0;
   transition: all 0.5s ease;
   transform: translateX(0);
@@ -1586,36 +1940,32 @@
 .core-value-right {
   position: absolute;
   right: -6rem;
-  bottom: -12rem;
-  transform: translateY(-50%);
+  top: 0;
   width: 45%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 3;
+  z-index: 9999;
 }
 
 .core-value-image-container {
   position: relative;
   width: 100%;
-  height: 100%;
-  max-height: 500px;
+  height: 80%;
+  max-height: 800px;
 }
 
 .core-value-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--radius);
-  transition: all 0.3s ease;
+  border-radius: 16px;
 }
 
 .core-value-card {
-  position: absolute;
-  bottom: -14rem;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   width: 400px;
   height: 300px;
   background: #fff;
@@ -1628,11 +1978,47 @@
   z-index: 4;
 }
 
-/* Responsive Design */
+/* Core Values Responsive Design */
+/* Tablet Responsive */
 @media (max-width: 1024px) {
+  .core-value-section {
+    padding: 2rem 1rem;
+    margin-bottom: 6rem;
+  }
+
+  .core-value-inner {
+    height: auto;
+    min-height: auto;
+    padding: 2.5rem 3rem;
+    border-radius: 2rem;
+  }
+
+  .core-value-header {
+    margin-bottom: 3rem;
+  }
+
+  .core-value-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .core-value-subtitle {
+    font-size: 1.1rem;
+    max-width: 500px;
+  }
+
   .core-value-content {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
+  }
+
+  .core-value-left {
+    order: 1;
+  }
+
+  /* Hide image and card on tablet */
+  .core-value-right {
+    display: none;
   }
 
   .nawasila-grid {
@@ -1641,7 +2027,8 @@
   }
 
   .nawasila-item {
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1rem;
+    border-radius: 40px;
   }
 
   .nawasila-icon {
@@ -1656,19 +2043,47 @@
   .nawasila-title {
     font-size: 0.9rem;
   }
+
+  .nawasila-kiri-bawah {
+    width: 400px;
+    left: -6rem;
+  }
 }
 
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .core-value-section {
-    padding: 3rem 0;
+    padding: 1.5rem 0.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .core-value-inner {
+    min-height: auto;
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .core-value-header {
+    margin-bottom: 2rem;
   }
 
   .core-value-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
 
   .core-value-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .core-value-content {
+    gap: 2rem;
+  }
+
+  /* Hide image and card on mobile */
+  .core-value-right {
+    display: none;
   }
 
   .nawasila-grid {
@@ -1677,30 +2092,27 @@
   }
 
   .nawasila-item {
-    padding: 0.8rem 1rem;
+    padding: 1rem;
+    border-radius: 30px;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    position: relative;
   }
 
-  .nawasila-title {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .core-value-title {
-    font-size: 2rem;
-  }
-
-  .core-value-subtitle {
-    font-size: 1rem;
+  /* Show description under each item on mobile */
+  .nawasila-desc-item {
+    display: block !important;
+    line-height: 1.4;
+    color: var(--color-gray);
+    margin-top: 0.5rem;
+    text-align: left;
   }
 
-  .nawasila-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .nawasila-item {
-    padding: 1rem 1.2rem;
+  /* White text for description on hover and active states */
+  .nawasila-item:hover .nawasila-desc-item,
+  .nawasila-item.active .nawasila-desc-item {
+    color: #fff;
   }
 
   .nawasila-icon {
@@ -1709,10 +2121,102 @@
   }
 
   .nawasila-icon i {
+    font-size: 1.1rem;
+  }
+
+  .nawasila-title {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .nawasila-kiri-bawah {
+    width: 300px;
+    left: -4rem;
+    opacity: 0.6;
+  }
+}
+
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+  .core-value-section {
+    padding: 1rem 0.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .core-value-inner {
+    padding: 1.5rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .core-value-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .core-value-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .core-value-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .core-value-content {
+    gap: 1.5rem;
+  }
+
+  /* Hide image and card on small mobile */
+  .core-value-right {
+    display: none;
+  }
+
+  .nawasila-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .nawasila-item {
+    padding: 1rem;
+    border-radius: 25px;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  /* Show description under each item on small mobile */
+  .nawasila-desc-item {
+    display: block !important;
+    line-height: 1.4;
+    color: var(--color-gray);
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+
+  /* White text for description on hover and active states */
+  .nawasila-item:hover .nawasila-desc-item,
+  .nawasila-item.active .nawasila-desc-item {
+    color: #fff;
+  }
+
+  .nawasila-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nawasila-icon i {
     font-size: 1.2rem;
   }
 
   .nawasila-title {
     font-size: 1rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .nawasila-kiri-bawah {
+    width: 250px;
+    left: -3rem;
+    opacity: 0.4;
   }
 }
