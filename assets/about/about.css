@@ -1961,13 +1961,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
 }
 
 .core-value-card {
   position: relative;
   width: 400px;
-  height: 300px;
   background: #fff;
   border-radius: var(--radius);
   border-top-left-radius: 12px;
