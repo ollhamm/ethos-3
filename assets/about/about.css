@@ -1563,7 +1563,7 @@
   max-width: 500px;
   height: auto;
   max-height: 300px;
-  border-radius: 16px;
+  border-radius: var(--radius);
   object-fit: cover;
   margin: 0;
   z-index: 3;
