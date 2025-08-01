@@ -448,11 +448,6 @@ button {
 
 /* ===== Custom Select Global Start ===== */
 
-.custom-select,
-.custom-select__selected {
-  max-height: 48px !important;
-}
-
 .custom-select {
   position: relative;
   width: 100%;
@@ -484,7 +479,10 @@ button {
   justify-content: space-between;
   min-height: 44px;
   transition: box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
 }
+
 .custom-select__selected:after {
   content: "\f078";
   font-family: "FontAwesome";
@@ -492,11 +490,13 @@ button {
   color: var(--color-gray);
   margin-left: 1rem;
   transition: transform 0.2s;
+  pointer-events: none;
 }
+
 .custom-select.open .custom-select__selected:after {
   transform: rotate(-180deg);
-  background-color: #ffff;
 }
+
 .custom-select__options {
   position: absolute;
   left: 0;
@@ -513,9 +513,11 @@ button {
   top: 100%;
   border: 1px solid #e0e0e0;
 }
+
 .custom-select.open .custom-select__options {
   display: block !important;
 }
+
 .custom-select__option {
   padding: 0.7rem 1.2rem;
   cursor: pointer;
@@ -524,13 +526,14 @@ button {
   font-size: 1rem;
   background-color: #fff !important;
 }
+
 .custom-select__option:hover,
 .custom-select__option.selected {
   background: #f0f4fa !important;
   color: var(--bg-blue, #359ed9);
 }
 
-/* Pastikan parent container tidak memotong dropdown */
+/* Ensure parent containers don't clip dropdown */
 .news-filter-card,
 .news-left-column,
 .news-layout,
