@@ -129,8 +129,38 @@
 }
 
 /* Filter Section */
-.filter-section {
-  background-color: #fff;
+
+.brand-atas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: auto;
+  z-index: 1;
+  opacity: 1;
+  pointer-events: none;
+}
+.brand-bawah {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: auto;
+  z-index: 1;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.career-dalam-filter {
+  position: absolute;
+  top: 0;
+  left: 10rem;
+  width: 160px;
+  height: auto;
+  z-index: -1;
+  opacity: 1;
+  pointer-events: none;
 }
 
 .filter-container {
@@ -138,6 +168,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  z-index: 3;
 }
 
 .filter-buttons {
@@ -150,7 +181,7 @@
 .filter-btn {
   padding: 0.75rem 1.5rem;
   border: 2px solid var(--color-blue);
-  background: transparent;
+  background: var(--color-white);
   color: var(--color-blue);
   border-radius: var(--radius);
   font-size: 0.9rem;
@@ -177,10 +208,10 @@
 }
 
 .search-btn {
-  width: 50px;
+  width: 60px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--color-blue);
+  background-color: var(--color-orange);
   color: var(--color-white);
   border: none;
   cursor: pointer;
@@ -188,12 +219,22 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  font-size: 1.1rem;
+}
+.brand-filter-search {
+  padding: 0.7rem 1.2rem;
+  border-radius: 2rem;
+  width: 100%;
+  max-width: 320px;
+  background-color: var(--color-white);
+  border: none;
+  font-size: 1rem;
+  outline: 2px solid var(--color-orange);
+  margin-right: 0.5rem;
+  z-index: 3;
 }
 
 .search-btn:hover {
-  background-color: var(--bg-blue-hover);
-  transform: scale(1.05);
+  background-color: var(--bg-orange-hover);
 }
 
 /* Responsive Design for Filter */
@@ -271,14 +312,13 @@
   background: var(--color-white);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .product-card-image-container {
@@ -298,7 +338,7 @@
   height: 100%;
   object-fit: cover;
   transition: all 0.3s ease;
-  border-radius: var(--radius);
+  border-radius: 16px;
 }
 
 .product-card-star-icon {
@@ -341,6 +381,8 @@
 
 .product-card-content {
   padding: 1.5rem;
+  position: relative;
+  min-height: 120px;
 }
 
 .product-card-title {
@@ -353,8 +395,8 @@
 
 .product-card-subtitle {
   font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1rem;
+  color: var(--color-gray);
+  margin-bottom: 3rem;
   line-height: 1.4;
 }
 
@@ -364,6 +406,9 @@
   border-radius: 20px;
   color: var(--color-white);
   letter-spacing: 0.5px;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
 }
 
 .tag-moisturizers {
