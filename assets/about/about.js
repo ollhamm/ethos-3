@@ -129,6 +129,89 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// History Section JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.sejarah-slide');
+  const timelineNumbers = document.querySelectorAll('.timeline-number');
+  const prevBtn = document.querySelector('.sejarah-nav-prev');
+  const nextBtn = document.querySelector('.sejarah-nav-next');
+  const scrollThumb = document.querySelector('.sejarah-scroll-thumb');
+  const currentSlideSpan = document.querySelector('.sejarah-current-slide');
+  const totalSlidesSpan = document.querySelector('.sejarah-total-slides');
+  
+  let current = 0;
+  const totalSlides = slides.length;
+
+  // Update scroll bar position
+  function updateScrollBar(index) {
+    const trackHeight = 120; // Height of scroll track
+    const thumbHeight = 40; // Height of scroll thumb
+    const maxTop = trackHeight - thumbHeight;
+    const topPosition = (index / (totalSlides - 1)) * maxTop;
+    
+    scrollThumb.style.top = `${topPosition}px`;
+    currentSlideSpan.textContent = index + 1;
+  }
+
+  // Update total slides info
+  function updateTotalInfo() {
+    totalSlidesSpan.textContent = `/${totalSlides}`;
+  }
+
+  function showSlide(idx) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === idx);
+    });
+    
+    // Update active timeline number
+    timelineNumbers.forEach((num, i) => {
+      num.classList.toggle('active', i === idx);
+    });
+
+    // Update scroll bar
+    updateScrollBar(idx);
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  // Timeline number click events
+  timelineNumbers.forEach((number, index) => {
+    number.addEventListener('click', () => {
+      current = index;
+      showSlide(current);
+    });
+  });
+
+  // Navigation button events
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp') {
+      prevSlide();
+    } else if (e.key === 'ArrowDown') {
+      nextSlide();
+    }
+  });
+
+  // Initialize
+  if (slides.length > 0) {
+    updateTotalInfo();
+    showSlide(current);
+  }
+});
+
 // company history section
 // Performance optimization: Debounce scroll events
 function debounce(func, wait) {
@@ -235,6 +318,142 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// Nawasila Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const nawasilaItems = document.querySelectorAll('.nawasila-item');
+  const modal = document.getElementById('nawasilaModal');
+  const modalClose = document.getElementById('nawasilaModalClose');
+  const modalTitle = document.getElementById('nawasilaModalTitle');
+  const modalDescription = document.getElementById('nawasilaModalDescription');
+
+  // Function untuk membuka modal
+  function openModal(item) {
+    const title = item.querySelector('.nawasila-item-title').textContent;
+    const description = item.querySelector('.nawasila-description p').textContent;
+    
+    modalTitle.textContent = title;
+    modalDescription.textContent = description;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Function untuk menutup modal
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Event listeners untuk item nawasila
+  nawasilaItems.forEach(item => {
+    item.addEventListener('click', function() {
+      openModal(this);
+    });
+  });
+
+  // Event listener untuk tombol close
+  modalClose.addEventListener('click', closeModal);
+
+  // Event listener untuk menutup modal ketika klik di luar modal
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Event listener untuk menutup modal dengan keyboard (ESC)
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+});
+
+// Cisi Misi Section Carousel Scroll Logic
+(function () {
+    const cisiMisiList = document.querySelector('.cisi-misi-list');
+    const prevBtn = document.querySelector('.cisi-misi-slider-btn-prev');
+    const nextBtn = document.querySelector('.cisi-misi-slider-btn-next');
+    const dotsContainer = document.querySelector('.cisi-misi-slider-dots');
+    const cardWidth = 320 + 32; // card width + gap
+    const cardsPerPage = 2; // Changed from 3 to 2 cards per slide
+    
+    if (!cisiMisiList) return;
+    
+    const totalCards = cisiMisiList.querySelectorAll('.cisi-misi-card-container').length;
+    const totalPages = Math.ceil(totalCards / cardsPerPage);
+
+    // Generate dots automatically
+    function generateDots() {
+        if (!dotsContainer) return;
+        
+        dotsContainer.innerHTML = ''; // Clear existing dots
+        
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'cisi-misi-slider-dot';
+            if (i === 0) dot.classList.add('active');
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    // Generate dots on page load
+    generateDots();
+
+    // Get dots after generation
+    const dots = Array.from(document.querySelectorAll('.cisi-misi-slider-dot'));
+
+    function updateActiveDotAndButtons() {
+        // Dot logic - Fixed calculation
+        if (dots.length) {
+            const scrollLeft = cisiMisiList.scrollLeft;
+            const scrollPosition = scrollLeft / (cardWidth * cardsPerPage);
+            const currentPage = Math.round(scrollPosition);
+            
+            // Ensure currentPage is within valid range
+            const validPage = Math.max(0, Math.min(currentPage, totalPages - 1));
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === validPage);
+            });
+        }
+        
+        // Button disable logic
+        if (prevBtn) prevBtn.disabled = cisiMisiList.scrollLeft <= 0;
+        if (nextBtn) {
+            const maxScroll = cisiMisiList.scrollWidth - cisiMisiList.clientWidth - 2; // -2 for rounding
+            nextBtn.disabled = cisiMisiList.scrollLeft >= maxScroll;
+        }
+    }
+
+    cisiMisiList.addEventListener('scroll', updateActiveDotAndButtons);
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+            cisiMisiList.scrollBy({ left: -cardWidth * cardsPerPage, behavior: 'smooth' });
+            setTimeout(updateActiveDotAndButtons, 400);
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+            cisiMisiList.scrollBy({ left: cardWidth * cardsPerPage, behavior: 'smooth' });
+            setTimeout(updateActiveDotAndButtons, 400);
+        });
+    }
+    
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', function () {
+            cisiMisiList.scrollTo({
+                left: i * cardWidth * cardsPerPage,
+                behavior: 'smooth'
+            });
+            setTimeout(updateActiveDotAndButtons, 400);
+        });
+    });
+
+    updateActiveDotAndButtons();
+})();
 
 
 
