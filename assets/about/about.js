@@ -455,6 +455,134 @@ document.addEventListener('DOMContentLoaded', function() {
     updateActiveDotAndButtons();
 })();
 
+// Company Holding Swiper
+document.addEventListener('DOMContentLoaded', function() {
+  new Swiper('.company-holding-swiper', {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      1024: {
+        slidesPerView: 5,
+      },
+    },
+  });
+});
+
+// Our Team Slider
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.our-team-swiper');
+    const prevBtn = document.querySelector('.our-team-btn-prev');
+    const nextBtn = document.querySelector('.our-team-btn-next');
+    let currentCenter = 0;
+    let autoSlideInterval;
+    let isPaused = false;
+
+    function getCards() {
+        return Array.from(container.querySelectorAll('.our-team-card'));
+    }
+
+    function updateSlider() {
+        const cards = getCards();
+        if (cards.length === 0) return;
+        if (currentCenter < 0 || currentCenter >= cards.length) {
+            currentCenter = Math.floor(cards.length / 2);
+        }
+        const total = cards.length;
+        const maxShow = 2; // 2 kiri, 2 kanan
+        cards.forEach((card, idx) => {
+            card.classList.remove('active', 'left', 'right', 'left2', 'right2', 'out');
+            // Hitung offset relatif ke currentCenter (looping)
+            let offset = idx - currentCenter;
+            if (offset > total / 2) offset -= total;
+            if (offset < -total / 2) offset += total;
+            card.setAttribute('data-offset', offset);
+            if (offset === 0) {
+                card.classList.add('active');
+            } else if (offset === -1) {
+                card.classList.add('left');
+            } else if (offset === -2) {
+                card.classList.add('left2');
+            } else if (offset === 1) {
+                card.classList.add('right');
+            } else if (offset === 2) {
+                card.classList.add('right2');
+            } else {
+                card.classList.add('out');
+            }
+        });
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+
+        // Pause/resume auto-slide on hover active card
+        cards.forEach((card, idx) => {
+            card.removeEventListener('mouseenter', pauseAutoSlide);
+            card.removeEventListener('mouseleave', resumeAutoSlide);
+            if (card.classList.contains('active')) {
+                card.addEventListener('mouseenter', pauseAutoSlide);
+                card.addEventListener('mouseleave', resumeAutoSlide);
+            }
+        });
+    }
+
+    function nextSlide() {
+        const cards = getCards();
+        currentCenter = (currentCenter + 1) % cards.length;
+        updateSlider();
+        if (!isPaused) resetAutoSlide();
+    }
+
+    function prevSlide() {
+        const cards = getCards();
+        currentCenter = (currentCenter - 1 + cards.length) % cards.length;
+        updateSlider();
+        if (!isPaused) resetAutoSlide();
+    }
+
+    function startAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+            if (!isPaused) nextSlide();
+        }, 3000);
+    }
+
+    function resetAutoSlide() {
+        if (!isPaused) {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+    }
+
+    function pauseAutoSlide() {
+        isPaused = true;
+        clearInterval(autoSlideInterval);
+    }
+    
+    function resumeAutoSlide() {
+        isPaused = false;
+        startAutoSlide();
+    }
+
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        const cards = getCards();
+        currentCenter = Math.floor(cards.length / 2);
+        updateSlider();
+        startAutoSlide();
+    }
+});
+
 
 
 
