@@ -1245,13 +1245,14 @@
   margin-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  border-bottom-right-radius: 8rem;
 }
 
 .benefits-container {
   display: flex;
   width: 100%;
   min-height: 60vh;
+  position: relative;
+  gap: -2rem;
 }
 
 .benefits-left {
@@ -1263,8 +1264,10 @@
   border-bottom-right-radius: 4rem;
   align-items: center;
   justify-content: center;
-  padding: 4rem 3rem;
+  padding: 4rem 0;
   position: relative;
+  z-index: 3;
+  margin-right: -3rem;
 }
 
 .benefits-left::after {
@@ -1285,12 +1288,42 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 3rem;
+  border-bottom-right-radius: 4rem;
   position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-left: -3rem;
+}
+
+.benefits-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.benefits-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    #359ed9 0%,
+    rgba(53, 158, 217, 0.95) 50%,
+    rgba(53, 158, 217, 0.7) 60%,
+    rgba(53, 158, 217, 0) 100%
+  );
+  opacity: 0.5;
+  pointer-events: none;
+  border-bottom-right-radius: 4rem;
 }
 
 .benefits-content {
   max-width: 500px;
-  z-index: 2;
+  z-index: 4;
   position: relative;
 }
 
@@ -1335,7 +1368,7 @@
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0.7rem;
-  color: var(--color-title);
+  color: #fff;
 }
 
 .benefits-target-list {
@@ -1349,7 +1382,7 @@
   margin-bottom: 1rem;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #505050;
+  color: #fff;
 }
 
 .target-number {
@@ -1368,6 +1401,7 @@
 @media (max-width: 1024px) {
   .benefits-container {
     flex-direction: column;
+    gap: 0;
   }
 
   .benefits-left::after {
@@ -1377,6 +1411,9 @@
   .benefits-left,
   .benefits-right {
     padding: 3rem 2rem;
+    margin-left: 0;
+    margin-right: 0;
+    z-index: 1;
   }
 
   .benefits-title {
@@ -1400,6 +1437,8 @@
   .benefits-left,
   .benefits-right {
     padding: 2.5rem 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .benefits-title {
