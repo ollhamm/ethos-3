@@ -60,7 +60,8 @@ header .navbar {
 }
 
 .navbar.fixed .navbar-menu a {
-  color: var(--color-gray);
+  color: #484848;
+  font-weight: 500 !important;
 }
 
 .navbar.fixed .navbar-menu a:hover {
