@@ -553,7 +553,7 @@
 .brands-product-grid {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
   margin-bottom: 4rem;
 }
 
@@ -563,15 +563,15 @@
   overflow: visible;
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
   padding: 1.5rem;
   position: relative;
 }
 
 .brands-product-image {
-  position: absolute;
+  position: relative;
   width: 240px;
-  height: 220px;
+  height: 260px;
   overflow: hidden;
   object-fit: contain;
   display: flex;
@@ -583,8 +583,6 @@
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 2rem;
   border-top-right-radius: 1rem;
-  top: -30px;
-  left: 2.5rem;
   z-index: 2;
 }
 
@@ -611,12 +609,11 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
   padding-top: 0.7rem;
-  font-weight: 400;
 }
 
 .brands-product-content {
-  margin-left: 300px;
   padding-right: 2rem;
+  flex: 1;
 }
 
 .brands-product-cta {
@@ -785,12 +782,10 @@
     width: 180px;
     height: 180px;
     position: relative;
-    top: 0;
-    left: 0;
   }
 
   .brands-product-content {
-    margin-left: 0;
+    flex: 1;
   }
 
   .brands-brand-logo {
