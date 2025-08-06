@@ -242,55 +242,84 @@ function scrollToVariants() {
 }
 
 // Panduan Konsumsi interaktif
-document.addEventListener('DOMContentLoaded', function () {
-    const items = document.querySelectorAll('.panduan-item');
-    const descItems = document.querySelectorAll('.panduan-desc-item');
-    const rightImg = document.querySelector('.panduan-right .panduan-bg-img');
-    const rightDescDisplay = document.querySelector('.panduan-desc-display .panduan-description');
+document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".panduan-item");
+  const descItems = document.querySelectorAll(".panduan-desc-item");
+  const rightImg = document.querySelector(".panduan-right .panduan-bg-img");
+  const rightDescDisplay = document.querySelector(
+    ".panduan-desc-display .panduan-description"
+  );
 
-    // Fungsi untuk set aktif berdasarkan index
-    function setActive(idx) {
-        items.forEach((item, i) => item.classList.toggle('active', i === idx));
-        
-        // Update gambar di sebelah kanan
-        const img = items[idx].querySelector('.panduan-bg-img');
-        if (img && rightImg) {
-            rightImg.src = img.src;
-        }
-        
-        // Show/hide deskripsi yang sesuai di card kanan
-        const descItems = document.querySelectorAll('.panduan-right .panduan-desc-item');
-        descItems.forEach((desc, i) => {
-            if (i === idx) {
-                desc.style.display = 'block';
-                // Add active class after a small delay for animation
-                setTimeout(() => {
-                    desc.classList.add('active');
-                }, 50);
-            } else {
-                desc.classList.remove('active');
-                desc.style.display = 'none';
-            }
-        });
-        
-        // Add active class to right card for image animation
-        const rightCard = document.querySelector('.panduan-right');
-        if (rightCard) {
-            rightCard.classList.add('active');
-            setTimeout(() => {
-                rightCard.classList.remove('active');
-            }, 800);
-        }
+  // Fungsi untuk set aktif berdasarkan index
+  function setActive(idx) {
+    items.forEach((item, i) => item.classList.toggle("active", i === idx));
+
+    // Update gambar di sebelah kanan
+    const img = items[idx].querySelector(".panduan-bg-img");
+    if (img && rightImg) {
+      rightImg.src = img.src;
     }
 
-    // Set default aktif ke index 0
-    if (items.length > 0) {
-        setActive(0);
-    }
-
-    items.forEach((item, idx) => {
-        item.addEventListener('click', function () {
-            setActive(idx);
-        });
+    // Show/hide deskripsi yang sesuai di card kanan
+    const descItems = document.querySelectorAll(
+      ".panduan-right .panduan-desc-item"
+    );
+    descItems.forEach((desc, i) => {
+      if (i === idx) {
+        desc.style.display = "block";
+        // Add active class after a small delay for animation
+        setTimeout(() => {
+          desc.classList.add("active");
+        }, 50);
+      } else {
+        desc.classList.remove("active");
+        desc.style.display = "none";
+      }
     });
+
+    // Add active class to right card for image animation
+    const rightCard = document.querySelector(".panduan-right");
+    if (rightCard) {
+      rightCard.classList.add("active");
+      setTimeout(() => {
+        rightCard.classList.remove("active");
+      }, 800);
+    }
+  }
+
+  // Set default aktif ke index 0
+  if (items.length > 0) {
+    setActive(0);
+  }
+
+  items.forEach((item, idx) => {
+    item.addEventListener("click", function () {
+      setActive(idx);
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  new Swiper(".logo-brand-swiper", {
+    slidesPerView: 8,
+    spaceBetween: 30,
+    loop: true,
+    speed: 3000, // kecepatan transisi antar slide
+    autoplay: {
+      delay: 0, // tidak ada jeda antara slide
+      disableOnInteraction: false,
+    },
+    allowTouchMove: false, // nonaktifkan drag/touch agar efek marquee lebih natural
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      1024: {
+        slidesPerView: 5,
+      },
+    },
+  });
 });

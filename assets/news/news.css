@@ -599,10 +599,6 @@
 .news-filter-search:focus {
   border-color: var(--color-blue);
 }
-.custom-select {
-  position: relative;
-  width: 100%;
-}
 
 .news-filter-btn {
   background: var(--color-orange, #f29015);

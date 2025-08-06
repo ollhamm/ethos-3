@@ -460,11 +460,6 @@ p {
 
 /* ===== Custom Select Global Start ===== */
 
-.custom-select,
-.custom-select__selected {
-  max-height: 48px !important;
-}
-
 .custom-select {
   position: relative;
   width: 100%;
@@ -485,30 +480,37 @@ p {
   background-color: #fff;
   color: var(--color-gray);
   font-weight: 400;
-  padding: 0.7rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 2rem;
   color: #505050;
   border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   cursor: pointer;
   font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 44px;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  border: 2px solid #e0e0e0;
+  outline: none;
 }
+
 .custom-select__selected:after {
   content: "\f078";
   font-family: "FontAwesome";
   font-size: 14px;
-  color: var(--color-gray);
+  color: #505050;
   margin-left: 1rem;
   transition: transform 0.2s;
+  outline: none;
+  border-color: var(--bg-blue);
 }
 .custom-select.open .custom-select__selected:after {
   transform: rotate(-180deg);
   background-color: #ffff;
+  outline: none;
+  border-color: var(--bg-blue);
 }
 .custom-select__options {
   position: absolute;
@@ -525,7 +527,6 @@ p {
   display: none;
   margin-top: 0.2rem;
   top: 100%;
-  border: 1px solid #e0e0e0;
 }
 .custom-select.open .custom-select__options {
   display: block !important;

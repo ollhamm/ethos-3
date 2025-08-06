@@ -201,7 +201,7 @@
     padding-bottom: 3rem;
   }
   .career-hero-content-wrapper {
-    top: 35%;
+    top: 50%;
     padding: 3rem 2rem;
     right: 0;
     left: 0;
@@ -213,7 +213,10 @@
     padding: 2rem 2rem;
     margin-left: auto;
     margin-right: auto;
-    bottom: -2.5rem;
+    bottom: -20rem;
+  }
+  .career-list-wrapper {
+    margin-top: 20rem;
   }
   .career-dalam-filter {
     display: none;
@@ -252,12 +255,17 @@
   white-space: nowrap;
 }
 .career-title {
-  font-size: 18px !important;
+  color: #505050;
+}
+
+.career-description {
+  font-size: 14px !important;
 }
 
 .career-table-data {
   font-size: 16px !important;
 }
+
 .career-detail-btn:hover {
   background: var(--bg-blue-hover);
   color: #fff;

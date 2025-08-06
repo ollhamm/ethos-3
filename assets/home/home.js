@@ -276,20 +276,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextBtn = document.querySelector('.news-slider-btn-next');
     const dots = Array.from(document.querySelectorAll('.news-slider-dot'));
     const cardWidth = 320 + 32; // card width + gap
-    const cardsPerPage = 3;
+    const cardsPerPage = 2; // Changed from 3 to 2 cards per slide
     if (!newsList) return;
     const totalCards = newsList.querySelectorAll('.news-card-container').length;
     const totalPages = Math.ceil(totalCards / cardsPerPage);
 
     function updateActiveDotAndButtons() {
-        // Dot logic
+        // Dot logic - Fixed calculation
         if (dots.length) {
             const scrollLeft = newsList.scrollLeft;
-            const page = Math.round(scrollLeft / (cardWidth * cardsPerPage));
+            const scrollPosition = scrollLeft / (cardWidth * cardsPerPage);
+            const currentPage = Math.round(scrollPosition);
+            
+            // Ensure currentPage is within valid range
+            const validPage = Math.max(0, Math.min(currentPage, totalPages - 1));
+            
             dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === page);
+                dot.classList.toggle('active', i === validPage);
             });
         }
+        
         // Button disable logic
         if (prevBtn) prevBtn.disabled = newsList.scrollLeft <= 0;
         if (nextBtn) {
