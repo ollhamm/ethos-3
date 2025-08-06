@@ -101,7 +101,7 @@ button {
 p {
   font-size: 1rem !important; /* 16px */
   font-weight: 400 !important;
-  line-height: 1.6;
+  line-height: 1.6 !important;
   text-decoration: none !important;
   color: #505050;
 }

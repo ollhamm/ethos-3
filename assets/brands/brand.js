@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(() => {
       isTransitioning = false;
-    }, 600);
+    }, 8000);
   }
 
   function nextSlide() {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(() => {
       startAutoSlide();
-    }, 5000);
+    }, 8000);
   }
 
   // Initialize slider
@@ -319,6 +319,47 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       1024: {
         slidesPerView: 5,
+      },
+    },
+  });
+});
+
+// Bahan Carousel Swiper
+document.addEventListener("DOMContentLoaded", function () {
+  const bahanSwiper = new Swiper(".bahan-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    speed: 800,
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
+    navigation: {
+      nextEl: ".bahan-swiper-button-next",
+      prevEl: ".bahan-swiper-button-prev",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 25,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+    on: {
+      init: function () {
+        // Add smooth transition effect
+        const slides = this.slides;
+        slides.forEach((slide) => {
+          slide.style.transition = "all 0.8s ease-in-out";
+        });
       },
     },
   });
