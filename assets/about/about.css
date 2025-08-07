@@ -2079,23 +2079,23 @@
 /* ===== */
 
 .collaboration-section {
-  position: relative;
   width: 100%;
-  height: 60vh;
+  color: var(--color-white);
+  text-align: center;
+  border-radius: var(--radius);
   margin-bottom: 4rem;
 }
-
-.collaboration-inner {
+.collaboration-container {
+  background: var(--color-blue);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 4rem;
-  background-color: var(--bg-blue);
+  flex-direction: column;
+  padding: 3rem 6rem;
   border-radius: var(--radius);
-  border-bottom-left-radius: 4rem;
-  z-index: 2;
+  border-bottom-right-radius: 4rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
 }
 .collaboration-title {
   display: flex;
@@ -2110,14 +2110,17 @@
 .collaboration-desc {
   color: #fff !important;
   padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 600px;
 }
 
 .collaboration-email-form {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 400px;
 }
@@ -2145,7 +2148,7 @@
   font-size: 1.1rem;
   cursor: pointer;
   transition: background 0.3s;
-  margin-left: -2px;
+  margin-left: -1px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2154,18 +2157,19 @@
   background: var(--bg-orange-hover);
 }
 
-@media screen and (max-width: 425px) {
-  .collaboration-email-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-    align-items: stretch;
+@media screen and (max-width: 768px) {
+  .collaboration-container {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+    padding: 3rem 2rem;
   }
 
-  .collaboration-email-input {
-    border-radius: var(--radius);
+  .collaboration-section {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
+
   .collaboration-email-btn {
-    border-radius: var(--radius);
+    padding: 1.1rem 1.4rem;
   }
 }
