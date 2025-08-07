@@ -301,15 +301,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   new Swiper(".logo-brand-swiper", {
-    slidesPerView: 8,
+    slidesPerView: 3,
     spaceBetween: 30,
     loop: true,
-    speed: 3000, // kecepatan transisi antar slide
+    speed: 3000,
     autoplay: {
-      delay: 0, // tidak ada jeda antara slide
+      delay: 0,
       disableOnInteraction: false,
     },
-    allowTouchMove: false, // nonaktifkan drag/touch agar efek marquee lebih natural
+    allowTouchMove: false,
     breakpoints: {
       640: {
         slidesPerView: 3,
@@ -331,10 +331,6 @@ document.addEventListener("DOMContentLoaded", function () {
     spaceBetween: 30,
     loop: true,
     speed: 800,
-    // autoplay: {
-    //   delay: 5000,
-    //   disableOnInteraction: false,
-    // },
     navigation: {
       nextEl: ".bahan-swiper-button-next",
       prevEl: ".bahan-swiper-button-prev",
@@ -345,10 +341,14 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 20,
       },
       768: {
-        slidesPerView: 3,
+        slidesPerView: 2,
         spaceBetween: 25,
       },
       1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      1440: {
         slidesPerView: 4,
         spaceBetween: 30,
       },

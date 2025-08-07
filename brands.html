@@ -148,7 +148,6 @@
             <div class="swiper-slide">
               <img src="images/patnerships/zymuno.png" alt="Zymuno" />
             </div>
-            <!-- Duplicate slides for loop -->
             <div class="swiper-slide">
               <img src="images/patnerships/etawaku.png" alt="Etawaku" />
             </div>
@@ -338,23 +337,41 @@
           </div>
 
           <!-- Pagination -->
-          <div class="brands-pagination">
-            <button
-              class="brands-pagination-btn brands-pagination-prev"
-              disabled
-            >
-              <i class="fa-solid fa-angle-left"></i>
-            </button>
-            <div class="brands-pagination-pages">
-              <button class="brands-pagination-page active">1</button>
-              <button class="brands-pagination-page">2</button>
-              <button class="brands-pagination-page">3</button>
-              <button class="brands-pagination-page">4</button>
-            </div>
-            <button class="brands-pagination-btn brands-pagination-next">
-              <i class="fa-solid fa-angle-right"></i>
-            </button>
-          </div>
+          <tfoot>
+            <tr>
+              <td
+                colspan="4"
+                style="
+                  text-align: center;
+                  border: none;
+                  padding: 0;
+                  background: transparent;
+                "
+              >
+                <nav
+                  aria-label="Halaman navigasi"
+                  class="custom-pagination-wrapper"
+                >
+                  <ul class="custom-pagination">
+                    <li class="custom-page-item">
+                      <a class="custom-page-link is-active" href="#">1</a>
+                    </li>
+                    <li class="custom-page-item">
+                      <a class="custom-page-link" href="#">2</a>
+                    </li>
+                    <li class="custom-page-item">
+                      <a class="custom-page-link" href="#">3</a>
+                    </li>
+                    <li class="custom-page-item">
+                      <a class="custom-page-link btn-pagination" href="#">
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </td>
+            </tr>
+          </tfoot>
         </div>
       </section>
     </main>
