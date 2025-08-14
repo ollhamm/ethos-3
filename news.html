@@ -46,6 +46,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- FancyBox CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
   </head>
   <!-- Body Start -->
   <body>
@@ -96,7 +101,7 @@
       <section class="gallery-section">
         <div class="gallery-inner">
           <div class="gallery-masonry section">
-            <!-- Contoh Foto Card -->
+            <!-- Gallery Card - Pelatihan Karyawan -->
             <div class="gallery-card">
               <div class="gallery-card-container">
                 <img
@@ -111,69 +116,56 @@
                   </div>
                 </div>
                 <div class="gallery-detail-row">
-                  <span>...</span>
-                  <button class="gallery-btn-detail">
+                  <span>Lihat Gambar</span>
+                  <a
+                    href="images/news-pelatihan.png"
+                    data-fancybox="gallery-pelatihan"
+                    data-caption="Pelatihan Karyawan - Dokumentasi pelatihan internal Ethos"
+                    class="gallery-btn-detail"
+                  >
                     <i
                       class="fa-solid fa-arrow-right"
                       style="font-size: 14px !important"
                     ></i>
-                  </button>
-                </div>
-                <!-- Multiple content hidden for modal -->
-                <div class="gallery-multicontent" style="display: none">
-                  <div class="gallery-modal-header">
-                    <h4>Pelatihan Karyawan</h4>
-                    <p>Dokumentasi pelatihan internal Ethos, sesi 1 dan 2.</p>
-                  </div>
-                  <div class="gallery-modal-scroll">
-                    <div class="gallery-modal-body">
-                      <div class="gallery-modal-item">
-                        <img
-                          src="images/news-pelatihan.png"
-                          alt="Pelatihan 1"
-                        />
-                      </div>
-                      <div class="gallery-modal-item">
-                        <img
-                          src="images/news-pelatihan.png"
-                          alt="Pelatihan 1"
-                        />
-                      </div>
-                      <div class="gallery-modal-item">
-                        <img
-                          src="images/news-pelatihan.png"
-                          alt="Pelatihan 1"
-                        />
-                      </div>
-                      <div class="gallery-modal-item">
-                        <img
-                          src="images/news-pelatihan.png"
-                          alt="Pelatihan 1"
-                        />
-                      </div>
-                      <div class="gallery-modal-item">
-                        <img
-                          src="images/news-pelatihan.png"
-                          alt="Pelatihan 1"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Doodle untuk contoh modal -->
-                  <img
-                    src="./assets/home/components-about/about-atas.svg"
-                    alt="Doodle"
-                    class="gallery-modal-doodle-atas-kanan"
-                  />
-                  <img
-                    src="./assets/components-footer/bawah-kiri.svg"
-                    alt="Doodle"
-                    class="gallery-modal-doodle-bawah-kiri"
-                  />
+                  </a>
+
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/news-pelatihan.png"
+                    data-fancybox="gallery-pelatihan"
+                    data-caption="Pelatihan 2"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/news-pelatihan.png"
+                    data-fancybox="gallery-pelatihan"
+                    data-caption="Pelatihan 3"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/news-pelatihan.png"
+                    data-fancybox="gallery-pelatihan"
+                    data-caption="Pelatihan 4"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/news-pelatihan.png"
+                    data-fancybox="gallery-pelatihan"
+                    data-caption="Pelatihan 5"
+                    style="display: none"
+                  ></a>
+
+                  <!-- Video embed (YouTube) -->
+                  <a
+                    href="https://www.youtube.com/watch?v=nUWOIj9tLxY"
+                    data-fancybox="gallery-pelatihan"
+                    data-caption="Video Pelatihan"
+                    style="display: none"
+                  ></a>
                 </div>
               </div>
             </div>
-            <!-- Foto Card Tambahan -->
+            <!-- Gallery Card - Sertifikasi Halal -->
             <div class="gallery-card">
               <div class="gallery-card-container">
                 <img
@@ -188,16 +180,22 @@
                   </div>
                 </div>
                 <div class="gallery-detail-row">
-                  <span>...</span>
-                  <button class="gallery-btn-detail">
+                  <span>Lihat Gambar</span>
+                  <a
+                    href="images/products/halal.png"
+                    data-fancybox="gallery-halal"
+                    data-caption="Sertifikasi Halal - Produk Ethos telah bersertifikat halal dan BPOM"
+                    class="gallery-btn-detail"
+                  >
                     <i
                       class="fa-solid fa-arrow-right"
                       style="font-size: 14px !important"
                     ></i>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
+            <!-- Gallery Card - Brand Unggulan -->
             <div class="gallery-card">
               <div class="gallery-card-container">
                 <img
@@ -212,16 +210,22 @@
                   </div>
                 </div>
                 <div class="gallery-detail-row">
-                  <span>...</span>
-                  <button class="gallery-btn-detail">
+                  <span>Lihat Gambar</span>
+                  <a
+                    href="images/products/product-1.png"
+                    data-fancybox="gallery-brand"
+                    data-caption="Brand Unggulan - 15+ brand herbal terbaik untuk keluarga Anda"
+                    class="gallery-btn-detail"
+                  >
                     <i
                       class="fa-solid fa-arrow-right"
                       style="font-size: 14px !important"
                     ></i>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
+            <!-- Gallery Card - Partner Aktif -->
             <div class="gallery-card">
               <div class="gallery-card-container">
                 <img
@@ -236,38 +240,29 @@
                   </div>
                 </div>
                 <div class="gallery-detail-row">
-                  <span>...</span>
-                  <button class="gallery-btn-detail">
+                  <span>Lihat Gambar</span>
+                  <a
+                    href="images/news-partnership.png"
+                    data-fancybox="gallery-partnership"
+                    data-caption="Partner Aktif - 10+ partner aktif mendukung inovasi Ethos"
+                    class="gallery-btn-detail"
+                  >
                     <i
                       class="fa-solid fa-arrow-right"
                       style="font-size: 14px !important"
                     ></i>
-                  </button>
-                </div>
-                <div class="gallery-multicontent" style="display: none">
-                  <div class="gallery-modal-header">
-                    <h4>Pelatihan Karyawan</h4>
-                    <p>Dokumentasi pelatihan internal Ethos, sesi 1 dan 2.</p>
-                  </div>
-                  <div class="gallery-modal-scroll">
-                    <div class="gallery-modal-body">
-                      <div class="gallery-modal-item">
-                        <img
-                          src="images/news-pelatihan.png"
-                          alt="Pelatihan 1"
-                        />
-                      </div>
-                      <div class="gallery-modal-item">
-                        <img
-                          src="images/news-pelatihan.png"
-                          alt="Pelatihan 1"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  </a>
+                  <!-- Hidden gallery images for FancyBox -->
+                  <a
+                    href="images/news-partnership.png"
+                    data-fancybox="gallery-partnership"
+                    data-caption="Partnership 2"
+                    style="display: none"
+                  ></a>
                 </div>
               </div>
             </div>
+            <!-- Gallery Card - Agen & Reseller -->
             <div class="gallery-card">
               <div class="gallery-card-container">
                 <img
@@ -282,16 +277,22 @@
                   </div>
                 </div>
                 <div class="gallery-detail-row">
-                  <span>...</span>
-                  <button class="gallery-btn-detail">
+                  <span>Lihat Gambar</span>
+                  <a
+                    href="images/products/reseller.png"
+                    data-fancybox="gallery-reseller"
+                    data-caption="Agen & Reseller - 1500+ agen dan reseller sukses di seluruh Indonesia"
+                    class="gallery-btn-detail"
+                  >
                     <i
                       class="fa-solid fa-arrow-right"
                       style="font-size: 14px !important"
                     ></i>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
+            <!-- Gallery Card - Petani Lokal -->
             <div class="gallery-card">
               <div class="gallery-card-container">
                 <img
@@ -306,16 +307,22 @@
                   </div>
                 </div>
                 <div class="gallery-detail-row">
-                  <span>...</span>
-                  <button class="gallery-btn-detail">
+                  <span>Lihat Gambar</span>
+                  <a
+                    href="images/products/ternak.png"
+                    data-fancybox="gallery-petani"
+                    data-caption="Petani Lokal - Pemberdayaan petani dan komunitas lokal"
+                    class="gallery-btn-detail"
+                  >
                     <i
                       class="fa-solid fa-arrow-right"
                       style="font-size: 14px !important"
                     ></i>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
+            <!-- Gallery Card - Inovasi Herbal -->
             <div class="gallery-card">
               <div class="gallery-card-container">
                 <img
@@ -330,17 +337,22 @@
                   </div>
                 </div>
                 <div class="gallery-detail-row">
-                  <span>...</span>
-                  <button class="gallery-btn-detail">
+                  <span>Lihat Gambar</span>
+                  <a
+                    href="images/herbal.png"
+                    data-fancybox="gallery-herbal"
+                    data-caption="Inovasi Herbal - Inovasi produk herbal untuk kesehatan keluarga"
+                    class="gallery-btn-detail"
+                  >
                     <i
                       class="fa-solid fa-arrow-right"
                       style="font-size: 14px !important"
                     ></i>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
-            <!-- Contoh Video Card -->
+            <!-- Gallery Card - Video Kegiatan -->
             <div class="gallery-card">
               <div class="gallery-card-container">
                 <video
@@ -357,13 +369,18 @@
                   </div>
                 </div>
                 <div class="gallery-detail-row">
-                  <span>...</span>
-                  <button class="gallery-btn-detail">
+                  <span>Lihat Video</span>
+                  <a
+                    href="videos/ethos.mp4"
+                    data-fancybox="gallery-video"
+                    data-caption="Video Kegiatan - Cuplikan video kegiatan corporate Ethos"
+                    class="gallery-btn-detail"
+                  >
                     <i
                       class="fa-solid fa-arrow-right"
                       style="font-size: 14px !important"
                     ></i>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -903,6 +920,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <!-- FancyBox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="assets/news/news.js"></script>
     <script>
       AOS.init({

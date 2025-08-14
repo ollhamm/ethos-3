@@ -113,7 +113,7 @@
   width: 360px;
   height: auto;
   z-index: -2;
-  opacity: 1;
+  opacity: 0.9;
   pointer-events: none;
 }
 
@@ -378,7 +378,7 @@
 }
 .career-detail-actions {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 1.2rem;
   margin-top: 0.5rem;
 }
@@ -441,8 +441,6 @@
 .career-detail-banner-header {
   width: 100%;
   position: relative;
-  margin-top: 0;
-  padding: 0;
   overflow: hidden;
   height: 60vh;
   display: flex;
@@ -483,33 +481,17 @@
   justify-content: left;
   z-index: 4;
 }
-@media (max-width: 760px) {
-  .hero-detail-career-bottom {
-    display: none;
-  }
+@media screen and (max-width: 768px) {
   .career-detail-section {
-    padding: 3rem 2rem;
-    max-width: 98vw;
+    padding: 1rem 2rem;
   }
-  .hero-detail-career-left {
-    display: none;
-  }
+
   .career-detail-header-content {
-    padding: 3em 2em;
-    margin-top: 6rem;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .career-detail-apply-btn,
-  .career-detail-save-btn,
-  .career-detail-share-btn {
-    width: 100%;
+    padding: 1rem 2rem !important;
+    display: flex;
     justify-content: center;
-  }
-  .career-detail-actions {
     flex-direction: column;
-    gap: 0.7rem;
-    width: 100%;
+    align-items: start;
   }
 }
 /* ===== Career Detail Banner Header End ===== */

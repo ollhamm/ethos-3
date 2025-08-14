@@ -324,6 +324,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const swiperWrapper = document.querySelector(
+    ".logo-brand-swiper .swiper-wrapper"
+  );
+  const slides = document.querySelectorAll(".logo-brand-swiper .swiper-slide");
+
+  if (slides.length < 5) {
+    swiperWrapper.classList.add("center-logos");
+  }
+});
+
 // Bahan Carousel Swiper
 document.addEventListener("DOMContentLoaded", function () {
   const bahanSwiper = new Swiper(".bahan-swiper", {

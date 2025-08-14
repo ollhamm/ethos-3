@@ -840,6 +840,17 @@
   height: 400px;
 }
 
+.load-more-btn {
+  background-color: var(--bg-orange);
+  text-align: center;
+  color: var(--color-white);
+  transition: all 0.3s ease-in-out;
+}
+
+.load-more-btn:hover {
+  background-color: var(--bg-orange-hover);
+}
+
 .event-card.active {
   transform: scale(1) translateX(0);
   opacity: 1;

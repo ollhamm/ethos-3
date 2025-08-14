@@ -90,6 +90,7 @@ h6 {
   font-weight: 400 !important;
 }
 a,
+span,
 button {
   font-size: 1rem !important; /* 16px */
   font-weight: 400 !important;
@@ -289,8 +290,7 @@ p {
   align-items: flex-start;
 }
 .footer-title {
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 600 !important;
   margin-bottom: 0.7rem;
 }
 .footer-address {
@@ -630,4 +630,231 @@ p {
 
 .custom-page-link i {
   font-size: 1rem;
+}
+
+/* Styling Rich Text Editor (RTE) */
+/* ===== Rich Text Editor Styling ===== */
+.rte-content {
+  font-family: "Montserrat", Arial, sans-serif;
+  color: #505050;
+  line-height: 1.6;
+}
+
+/* Headings inside RTE */
+.rte-content h1,
+.umb-rte h1 {
+  font-size: 3.5rem !important; /* 56px */
+  font-weight: 600 !important;
+  line-height: 1.2;
+}
+
+.rte-content h2,
+.umb-rte h2 {
+  font-size: 3rem !important;
+  font-weight: 600 !important;
+}
+
+.rte-content h3,
+.umb-rte h3 {
+  font-size: 2.5rem !important;
+  font-weight: 600 !important;
+}
+
+.rte-content h4,
+.umb-rte h4 {
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+}
+
+.rte-content h5,
+.umb-rte h5 {
+  font-size: 1.75rem !important;
+  font-weight: 500 !important;
+}
+
+.rte-content h6,
+.umb-rte h6 {
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+}
+
+/* Paragraphs */
+.rte-content p,
+.umb-rte p {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1rem;
+  color: #505050;
+}
+
+/* Links */
+.rte-content a,
+.umb-rte a {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.6;
+  color: var(--color-orange);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.rte-content a:hover,
+.umb-rte a:hover {
+  color: var(--color-dark-orange);
+}
+
+/* Lists */
+.rte-content ul,
+.umb-rte ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #505050; /* warna bullet dan text */
+}
+
+.rte-content ol,
+.umb-rte ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #505050; /* warna number dan text */
+}
+
+/* Pastikan list item juga ikut warnanya */
+.rte-content ul li,
+.umb-rte ul li,
+.rte-content ol li,
+.umb-rte ol li {
+  color: #505050;
+}
+
+/* Blockquote */
+.rte-content blockquote,
+.umb-rte blockquote {
+  border-left: 4px solid var(--color-orange);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #666;
+}
+
+/* Images */
+.rte-content img,
+.umb-rte img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* Highlight style for RTE */
+.rte-content .title-highlight,
+.umb-rte .title-highlight {
+  color: var(--color-orange);
+  font-size: 3.5rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2;
+}
+
+/* ===== Responsive Breakpoints (Follow Global Typography) ===== */
+
+/* Tablet */
+@media screen and (max-width: 900px) {
+  .rte-content h1,
+  .umb-rte h1 {
+    font-size: 2.75rem !important;
+  }
+  .rte-content h2,
+  .umb-rte h2 {
+    font-size: 2.25rem !important;
+  }
+  .rte-content h3,
+  .umb-rte h3 {
+    font-size: 2rem !important;
+  }
+  .rte-content h4,
+  .umb-rte h4 {
+    font-size: 1.5rem !important;
+  }
+  .rte-content h5,
+  .umb-rte h5 {
+    font-size: 1.25rem !important;
+  }
+  .rte-content h6,
+  .umb-rte h6 {
+    font-size: 1rem !important;
+  }
+  .rte-content p,
+  .umb-rte p,
+  .rte-content a,
+  .umb-rte a {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .rte-content h1,
+  .umb-rte h1 {
+    font-size: 2.25rem !important;
+  }
+  .rte-content h2,
+  .umb-rte h2 {
+    font-size: 1.75rem !important;
+  }
+  .rte-content h3,
+  .umb-rte h3 {
+    font-size: 1.5rem !important;
+  }
+  .rte-content h4,
+  .umb-rte h4 {
+    font-size: 1.25rem !important;
+  }
+  .rte-content h5,
+  .umb-rte h5 {
+    font-size: 1.125rem !important;
+  }
+  .rte-content h6,
+  .umb-rte h6 {
+    font-size: 1rem !important;
+  }
+  .rte-content p,
+  .umb-rte p,
+  .rte-content a,
+  .umb-rte a {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Extra Small */
+@media screen and (max-width: 400px) {
+  .rte-content h1,
+  .umb-rte h1 {
+    font-size: 2rem !important;
+  }
+  .rte-content h2,
+  .umb-rte h2 {
+    font-size: 1.5rem !important;
+  }
+  .rte-content h3,
+  .umb-rte h3 {
+    font-size: 1.25rem !important;
+  }
+  .rte-content h4,
+  .umb-rte h4 {
+    font-size: 1.125rem !important;
+  }
+  .rte-content h5,
+  .umb-rte h5 {
+    font-size: 1rem !important;
+  }
+  .rte-content h6,
+  .umb-rte h6 {
+    font-size: 0.875rem !important;
+  }
+  .rte-content p,
+  .umb-rte p,
+  .rte-content a,
+  .umb-rte a {
+    font-size: 0.8125rem !important;
+  }
 }
